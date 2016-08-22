@@ -365,7 +365,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{Airborne Remote Sensing of Soil Moisture using Reflectometry with P-band Signals of Opportunity}
+\title{Airborne Remote Sensing of Soil Moisture using P-band Signals of Opportunity}
 %
 %
 % author names and IEEE memberships
@@ -377,9 +377,12 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{Yao-Cheng~Lin,~\IEEEmembership{Member,~IEEE,}
+\author{James~L. Garrison,~\IEEEmembership{Senior Member,~IEEE}
+        Yao-Cheng~Lin,~\IEEEmembership{Member,~IEEE,},
+        Jeffrey Piepmeier,~\IEEEmembership{Senior Member,~IEEE}
+        Joesph Knuble,~\IEEEmembership{Senior Member,~IEEE}
         Georges~Stienne,~\IEEEmembership{Member,~IEEE,}
-        and~James~Garrison,~\IEEEmembership{Fellow,~IEEE}% <-this % stops a space
+        and~Cornelis~Frederik~du~Toit,~\IEEEmembership{Senior Member,~IEEE}% <-this % stops a space
 \thanks{Yao-Cheng Lin is with Aeronautics and Astronautics, Purdue University, Indiana,
 IN, 47907}}
 
@@ -472,9 +475,15 @@ Remote sensing, Signal of opportunity, soil moisture, P-band.
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-\IEEEPARstart{T}{he}measurement of soil moisture plays an important role in studying Earth's hydrosphere. Soil moisture is measured directly in situ at specific locations, however, the measurement in the region is not comprehensive for global studies because soil moisture highly depends on spatial distribution \cite{Wang:2009}. Satellite remote sensing provides several techniques for estimating soil moisture over a wide area, especially passive microwave radiometry is the most mature technology for the remote sensing of soil moisture. In 2009, ESA (European Space Agency) launched the SMOS (Soil Moisture and Ocean Salinity) satellite providing global maps of soil moisture and ocean salinity \cite{Kerr:2000}. Then the upcoming Soil Moisture Active Passive (SMAP) mission from National Aeronautics and Space Administration (NASA) \cite{Entekhabi:2010} will make global measurements of the soil moisture present at the Earth's land surface and will distinguish frozen from thawed land . However, the frequencies used in SMOS and SMAP are in L-band (1.4GHz) (the corresponding wavelength is about 21 cm) because of the required antenna size. Moreover, the specific frequency (1.4GHz) selected for SMOS and SMAP lies in a band protected for radio astronomy and thus utilizes strong isolation from radio frequency interference (RFI). The sensing depth for these frequencies, however, is limited to the first few centimeters of the soil.
+\IEEEPARstart{T}{he} measurement of soil moisture plays an important role in studying Earth's hydrosphere. Soil moisture is measured directly in situ at specific locations, however, the measurement in the region is not comprehensive for global studies because soil moisture highly depends on spatial distribution \cite{Wang:2009}. Satellite remote sensing provides several techniques for estimating soil moisture over a wide area, especially passive microwave radiometry is the most mature technology for the remote sensing of soil moisture. In 2009, ESA (European Space Agency) launched the SMOS (Soil Moisture and Ocean Salinity) satellite providing global maps of soil moisture and ocean salinity \cite{Kerr:2000}. Then the upcoming Soil Moisture Active Passive (SMAP) mission from National Aeronautics and Space Administration (NASA) \cite{Entekhabi:2010} will make global measurements of the soil moisture present at the Earth's land surface and will distinguish frozen from thawed land . However, the frequencies used in SMOS and SMAP are in L-band (1.4GHz) (the corresponding wavelength is about 21 cm) because of the required antenna size. Moreover, the specific frequency (1.4GHz) selected for SMOS and SMAP lies in a band protected for radio astronomy and thus utilizes strong isolation from radio frequency interference (RFI). The sensing depth for these frequencies, however, is limited to the first few centimeters of the soil.
 
 Satellite remote sensing is not only limited in the observation of specific satellites, but Global Navigation Satellite System-Reflectometry (GNSS-R) has been demonstrated as an alternative approach to the remote sensing of soil moisture, through several airborne and ground-based experiments \cite{Zavorotny:2010} \cite{Larson:2008}. GNSS-R is a bistatic radar configuration, using the existing GNSS signals as the illumination source, producing a measurement of surface reflectivity, Γ, that is directly related to emissivity, ε, through conservation of energy; Γ=1-ε. GNSS-R thus provides a measurement of the exact physical property sensed by microwave radiometry, but with a substantially higher power due to the forward-scatter geometry and an active transmitter. This could enable a satellite receiver with a much smaller antenna, as compared to a radar or radiometer, to be used for soil moisture sensing. GNSS signals are designed with strong anti-jamming capabilities, a feature that should translate into a high RFI resistance for GNSS-R measurements, as compared to passive microwave radiometry. GNSS-R measurements from satellite would provide global coverage as a result of the GNSS constellation design. GNSS, however, is also an L-band system (1575.42 MHz) and thus, the observed depth of soil moisture would not be an improvement over that provided by L-band radiometry (a few cm).
+
+\bf moved summary of GNSS-R here - backgrond information
+
+\rm
+GNSS-R is a bistatic radar configuration, using the existing GNSS signals as the illumination source, producing a measurement of surface reflectivity, $\Gamma$, that is directly related to emissivity, $\epsilon$, through conservation of energy; $ \Gamma = 1 - \epsilon $ \cite{Jin:2011}. GNSS-R thus provides a measurement of the exact physical property sensed by microwave radiometry, but with a substantially higher power due to the forward-scatter geometry and an active transmitter. This could enable a satellite receiver with a much smaller antenna, as compared to a radar or radiometer, to be used for soil moisture sensing. GNSS signals are designed with strong anti-jamming capabilities, a feature that should translate into a high RFI resistance for GNSS-R measurements, as compared to passive microwave radiometry. GNSS-R measurements from satellite would provide global coverage as a result of the GNSS constellation design. GNSS, however, is also an L-band system (1575.42 MHz) and thus, the observed depth of soil moisture would not be an improvement over that provided by L-band
+radiometry (a few cm). The unique contribution of the research defined in this proposal would extend the penetration depth of soil moisture measurements by applying the GNSS-R technique to communication satellite signals at lower frequencies.
 
 To observe the soil moisture of different depths, the signals with various frequencies are necessary. Reflectometry, using these so-called "Signals of Opportunity", or SoOp, could potentially make these measurements with instrumentation that is an order of magnitude smaller and with lower power requirement than active SAR or passive radiometry. As with GNSS-R, the "process-gain" obtained through cross-correlating the reflected signal may also provide a stronger isolation from RFI. Such measurements have never been demonstrated before. The cross-correlation technique developed for GNSS-R was recently demonstrated on communication satellite signals. An important finding was that the higher SNR, and nearly random data modulation, of communications signals allowed cross-correlation to be performed between the direct and reflected signals, without the need for a model signal. In that experiment, ocean reflections from the two geostationary satellites providing the XM radio service were inverted to estimate the surface wind speed during a flight off the Chesapeake Bay \cite{Shah:2011}. According to successful demonstration to show reflectometry using any communication satellite signal with sufficient SNR and a nearly random modulation, the similar technology is applied to the other satellites such as UHF-follow On (UFO) satellites with frequency from 240 to 270 MHz.
 
@@ -485,8 +494,539 @@ To observe the soil moisture of different depths, the signals with various frequ
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
-\subsection{P-Band UHF-Follow On Satellites}
-The Ultra High Frequency Follow-On (UFO) system is a communication satellite system whose function is to provide communications for airborne, ship, submarine and ground forces. UFO satellite system is a DOD sponsored program and operated by U.S. Navy. By now there are totally 11 satellites. The first launch is in Mar.1993 and the planned lifetime of UFO system is 14 years. It replaced FLTSATCOM and is scheduled to be replaced by MUOS. The orbit of UFO is geosynchronous orbit and the altitude is 32810 km. From F-1 to F-7, UFO satellites provide redundant command and ranging capabilities when the satellite is on station. The bandwidth of each satellite is 25 kHz and it is on board processing. According to the amateur radio website \cite{Matt:2014}, the frequencies from both satellites are as the following table. Table\ref{Table Band Plan} indicates the location for band plan for UFO satellites.
+
+\section{Basic Principles}
+
+\bf JLG notes - organization of this section \rm 
+The relationship between reflectivity $\Gamma$ and emissivity $T$ is expressed in the following equation,
+\begin{equation}
+\Gamma + T = 1
+\end{equation}
+which is a statement of energy conversation \cite{Ulaby:1981}. The reflectivity depends on the incident angle and dieletric constant of media.
+Relationship between reflectivity, emissivity and soil moisture - summary of results of models.  Reference, don't give a full derivation of existing models.
+
+Relationship between sensing depth, penetration depth, frequency and soil moisture - justification of P-band. 
+
+Give two plots - reflectivity vs. soil moisture,  penetration depth vs. soil moisture. 
+
+\bf end of my notes \rm 
+
+The Penetration depth depth within an absorbing homogeneous material, in which the flux  of the field decays to $\frac{1}{e}$ of its surface value \cite{Ulaby:1981}. 
+This can be shown to be dependent on the imaginary part of the soil dielectric constant and the wavelength. 
+%\begin{eqnarray}
+%	\alpha &&= \frac{2\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}}) \\
+%    \delta_p &&= \frac{\alpha}{2}
+%\end{eqnarray}
+
+\begin{equation}
+%	\alpha &&= \frac{2\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}}) \\
+  \delta_p  = \frac{\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}})
+\end{equation}
+Where  $\alpha$ attenuation constant.
+
+The dielectric constant of soil depends on the soil moisture, with several models developed and in use for remote sensing [citations to Wang and Schmuggee, etc ...].
+These models are functions of soil texture, frequency, and salinity are known. 
+Figure \ref{fig:depth} plots the penetration depth as a function of volumetric soil moisture, computed using the model [XXX], for three fraquencies, represeting P-band (250 MHz), L-band(1.5 GHz) and S-band (2.2 GHz). 
+Although the situation in a realistic  natural environment will be more complicated, with a heterogeneous multi-layer soil, and variable soil moisture profile, this simple definition of penetration depth will be used as an approximation of the soil depth to which microwave remote sensing is capable of making a measurement.  Figure \ref{fig:depth} clearly shows that measurements below the top few cm. of soil will require observations in P-band and lower frequencies. 
+
+\begin{figure}[!t]
+	\centering
+	%\includegraphics[width=2.5in]{}
+	\caption{Penetration depth vs. volumetric soil moisture, for P-band, L-band and S-band.}
+    \centering
+	\label{fig:depth}
+\end{figure}
+
+Assuming a 45 deg. incidence angle and a 1.2~m wavelength,  P-band signals are expected to meet the Rayleigh criterion for specular reflection when soil height variation is smaller than 21 cm. The more stringent Fraunhofer condiiton [citation to Ulaby] will be met for soil roughness smaller than 5 cm.  These are reasonable conditions to meet for agricultural fields, and we will proceed with these assumptions. 
+Validation of this assumption will be a key step in the forthcoming experimental tests of the Signals of Opportunity Airborne Demonstrator (SoOp-AD). 
+
+
+%Figure \ref{fig:Fresnel zone} indicates the Fresnel zone with specular point. The Fresnel zone can be calculated by
+%\begin{equation}
+%	F_n=\sqrt{n \lambda \frac{D_{TS}D_{RS}}{D_{TS}+D_{RS}}} \label{Eq: Fresnel_zone}
+%\end{equation}
+%Where $n$ is nth Fresnel zone, $\lambda$ is the wavelength of signal, $D_{TS}$ is the distance between the transmitter and specular point, $D_{RS}$ is the distance between the receiver and specular point. Because $D_{TS}$ is extremely large than $D_{RS}$, the equation can be re-written as,
+
+The first Fresnel zone, assuming a distant transmitter, will be an ellipse with a semi-major axis  
+\begin{equation}
+	%F_n=\sqrt{n \lambda D_{RS}} \Rightarrow 
+    a =\sqrt{\frac{\lambda h}{sin\theta} } 
+     \label{Eq: Fresnel_zone_reduce}
+\end{equation}
+on the soil surface.
+$h$ is the height and $\theta$ is the elevation angle.
+The first fresnel zone will be used as the definition of the resolution of the specular reflectometry measurmenets. 
+
+%\begin{figure}[!t]
+%	\centering
+%	\includegraphics[width=2.5in]{pdf/Fresnel_zone.pdf}
+%	\caption{Fresnel zone for the specular point.}
+%    \centering
+%	\label{fig:Fresnel zone}
+%\end{figure}
+
+
+%\subsection{Fresnel reflection}
+%\section{Soil moisture retrieval from reflectivity}
+
+Reflectivity, $\Gamma$ can be used to directly sense the soil moisture through the   Fresnel  coefficients $\mathcal{R}$, derived for the specular reflection from the interface between two semi-infinite media.
+$\Gamma_{pq} = |\mathcal{R}_{pq}|^2$ 
+For an incident polarization $p$ and reflected polarization $q$. 
+Circular polarization is used for most satellite communication transmissions.  The Fresnel coeffecients for incident right (R) and left(L) hand circular polarization are derived from the common horizontal (H) and Vertical (V) polarization forms. 
+
+\begin{equation}
+	\begin{bmatrix}
+	\mathcal{R}_{RR} & \mathcal{R}_{RL} \\
+	\mathcal{R}_{LR} & \mathcal{R}_{LL}
+	\end{bmatrix} = 
+	\frac{1}{2}
+	\begin{bmatrix}
+	\mathcal{R}_{HH} + \mathcal{R}_{VV} & \mathcal{R}_{HH} - \mathcal{R}_{VV} \\
+	\mathcal{R}_{HH} - \mathcal{R}_{VV} & \mathcal{R}_{HH} + \mathcal{R}_{VV}		\end{bmatrix}
+\end{equation}
+
+\begin{equation} 
+\begin{split}
+	{\mathcal{R}_{hh}} = {}& \frac{{{{\tilde \varepsilon }_r}\cos \theta  - \sqrt 				{{{\tilde \varepsilon }_r} - {{\sin }^2}\theta } }}{{{{\tilde \varepsilon}_r}				\cos \theta  + \sqrt {{{\tilde \varepsilon }_r} - {{\sin }^2}\theta }}}
+\\
+	{\mathcal{R}_{vv}} = {}& \frac{{\cos \theta  - \sqrt {{{\tilde \varepsilon }_r} - {{\sin }^2}\theta } }}{{\cos \theta  + \sqrt {{{\tilde \varepsilon }_r} - {{\sin }^2}\theta }}} 
+    \end{split}
+     \label{Eq: reflectivity_di}
+\end{equation}
+
+Figure \ref{fig:reflectivity} shows the reflectivity (RL ?) as a function of volumentric soil moisture, for several common soil types, computed using the XXX model for complex dielectric constant.   This relationship will be the fundamental approach to sensing the soil moisture content within approximately the top layers of soil down to the penetration depth given in figure \ref{fig:depth}.
+In this paper, we will present the essential design of an instrument for this measurement, using reflections of P-band signals of opportunity (SoOp) to estimate the surface reflectivity $\Gamma$. 
+An approach to estimating the soil reflectivity through cross-correlating the reflected signal with the direct one will be developed in section XXX. 
+Inverse methods to estimate the water distribution throughout a soil column from these measurements are beyond the scope of the work in this paper.  
+
+\begin{figure}[!t]
+	\centering
+	%\includegraphics[width=2.5in]{}
+	\caption{Reflectivity from flat surface vs. volumetric soil moisture, P-band}
+    \centering
+	\label{fig:reflectivity}
+\end{figure}
+
+
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=4in]{pdf/gamma_vs_mv1.pdf}
+	\caption{The reflectivity vs. soil moisture ($\%$) for the circular polarization}
+	\centering
+	\label{fig:reflect_mv}
+\end{figure}
+% The coefficients of a polynomial $P(x)$ of degree $N$ is given by
+% \begin{equation}
+%	P(1)x^N+P(2)x^{N-1}+\cdots+P(N)x+P(N+1)
+%\end{equation} The coefficients of a polynomials in Figure \ref{fig:mv_reflect} are lists in Table \ref{Table:Polynomial_fitting}
+
+
+
+\section{Development of the Retrieval Algorithm}
+\subsection{Signal Model}
+The transmitted signal from a satellite ($x_{T}$) is modeled as
+\begin{equation}
+	x_T(t)=\sqrt{C_T}a(t)e^{j\omega_et},
+    \label{Eq:xT}
+\end{equation}
+where the transmitted carrier power is $C_{T}$, $a(t)$ is the modulation, $ω_{e}$ is the free space frequency. The received signals at the object with antenna along the direct and reflected path ray can be represented 
+\begin{eqnarray}
+	%\begin{split}
+  	x_D(t)&=\sqrt{C_D}a(t-\tau_D)e^{j\omega_e(t-\tau_D)}, \\
+    x_R(t)&=\sqrt{C_R}a(t-\tau_R)e^{j\omega_e(t-\tau_R)}, 
+   % \end{split}
+    \label{Eq:xD_xR}
+\end{eqnarray}
+where $C_D$ and $C_R$ are received powers of signals the direct and reflected path at the antennas.  
+$\tau_D$ and $\tau_R$ are the path delay along the direct and reflected path. The reflectivity $\Gamma$ is defined as
+\begin{equation}
+	\Gamma=\frac{C_{RS}}{C_{DS}}
+    \label{Eq:reflect}
+\end{equation}
+Where $C_{DS}$ and $C_{RS}$ are, respectively, the incident (direct) and reflected signal powers at the surface. 
+For an airbonre recevier, we will neglect the additional path loss from the aircraft to the surface, and approximate $C_{DS}\approx C_D$ and $C_{RS}\approx C_R$
+ 
+A schematic for the SoOp P-band receiver is shown in figure \ref{fig:Hardware}. 
+The essential elements of this receiver are sky-view (S) and Earth-view (E) antennas and two identical recievers (identified as 1 and 2). 
+Generally, both the Earth- and Sky-view antennas will have non-negligible gain in the directions of the direct (D) and reflected (R) signals. 
+Characterization of the antenna patterns will thus require four gain pattern measurements, one for each antenna, in each direction, denoted as $G_{E,D}$, 
+$G_{E,R}$ 
+The receivers down-convert, amplify and digitize the signal.  
+Although assumed identical in design, the two receivers have different gains, $G_1$ and $G_2$, and different noise figures, both of which must be calibrated using a process described in section \ref{sec:calibration}.  
+A transfer switch, which changes the connections between the antennas $\{ E, S \}$ and the receiver channels, $\{ 1, 2\}$ and noise sources are used for the calibration process. 
+After digitization, the receivers  perform cross-correlation between the channel 1 and channel 2 at discrete lags. 
+The resulting measurements of the complex cross-correlation are the Level~0 data products (raw, un-calibrated instrument readings). 
+
+\begin{figure}[t!]
+	\centering
+    \centering
+	\includegraphics[width=2.5in]{pdf/ant_gain.jpg}
+	\caption{The gain of sky-view and earth-view antenna for the direct and reflected path rays..}
+	\centering
+	\includegraphics[width=2.5in]{pdf/hardware.pdf}
+	\caption{Schematic of a SoOp receiver.  Sky-view (S) and Earth-view (E) antennas \bf could you combine these two ? \rm}
+	\centering
+	\label{fig:Hardware}
+\end{figure}
+
+At the  receiver receives the signals, the models of signal for channel 1 and 2 are given by
+\begin{eqnarray}
+%  \begin{split}
+ 	x_1(t)&= \sqrt{G_1}
+    \left[ 
+       \sqrt{G_{S,D} C_T} a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
+       \sqrt{G_{S,R} C_R} a(t-\tau_{R}) e^{-\omega_{C} \tau_R} + n_1(t) 
+      \right] e^{-j \omega_{IF} t} \\
+    x_2(t)&=\sqrt{G_2}\left[ 
+         \sqrt{G_{E,D} C_T}  a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
+         \sqrt{G_{E,R} C_R} a(t-\tau_{R}) e^{-\omega_{C} \tau_R} + n_2 (t) \right]
+         e^{-j \omega_{IF} t}
+%  \end{split}
+  \label{Eq:x1_x2_model}
+\end{eqnarray}
+% \begin{equation}
+%  \begin{split}
+%  	x_1(t)&=\sqrt{G_1}(\sqrt{G_{S,D}} x_D(t)) + \sqrt{G_{S,R}} x_R(t) + n_1)e^{-%j\hat{\omega}_et},\\
+%    x_2(t)&=\sqrt{G_2}(\sqrt{G_{E,D}} x_D(t)) + \sqrt{G_{E,R}} x_R(t) + n_2)e^{-j\hat{\omega}_et},
+%  \end{split}
+%  \label{Eq: x1_x2_model}
+%\end{equation}
+%where $G$ is the gain in power ratio, 
+$n$ is the noise with zero-mean, Gaussian, thermal noise with power spectra $\sigma^2_1$ and $\sigma^2_2$ \bf Check the noise model \rm.  
+$\omega_{IF} = \omega_{LO} - \hat{\omega}_c$ is the intermediate frequency, following down-conversion with a local oscillator frequency of $\omega_{LO}$. 
+%the subscript $1$ and $2$ represent channel 1 and 2, and the subscript $S$ and $E$ denote the sky-view and earth-view antenna. Figure \ref{fig:ant_gain} shows the gain of sky-view and earth-view antenna along the direct and reflect paths.
+
+
+\subsection{Correlation}
+The digital receiver can perform a short-time correlation between two signals ($x_p$ and $x_q$) at delay $\tau_s$, using an integration time $T_I$. 
+\begin{equation}
+	R_{pq}(\tau)  = %\langle x_p^*(t)x_q(t+\tau)\rangle
+    =\frac{1}{T_I} \int_{T_I}x_p(t) x_q^*(t+\tau)dt 
+   % R_{pq}(\tau-\tau_{qp}) =\langle x_p^*(t-\tau_p)x_q(t-\tau_q +\tau)\rangle
+    \label{Eq: correlation_def}
+\end{equation}
+
+We will assume $T_I$ is sufficiently long and that modulation is generated from an infinitely-long, constant envelope digital signal,so that the autocorrlation of $a(t)$ \begin{equation}
+R_a (\gamma) = \frac{1}{T_I} \int_{T_I} a(t) a^*(t+\gamma) dt
+\end{equation}
+is known and has the following properties.
+\begin{eqnarray}
+   \label{eqn:acfa1}
+	R_{a}(0) &= 1   \\
+       \label{eqn:acfa2}
+    R_{a}(\gamma) & = R_a^* (-\gamma)
+\end{eqnarray}
+In practice, $R_a(\gamma)$ can be computed from a model, if the modulation design is known, or it can be measured experimentally through observation of the direct line-of-sight signal $x_D(t)$ with pair of directional antennas.  
+The latter procedure is described in section XXX and was applied to this problem.  
+
+The receiver noise can be expressed as a single equivalent thermal noise source at the input of the receiver, with the following properties \bf This needs to be cleaned up -  I've kept most of your work, but cleaned up the nomenclature \rm. 
+%Where $\tau_{qp}$ is the difference between the delay of $x_p$ and $x_q$, and $T_I$ is the integration time. The correlation $R_a(\tau)$ of $a(t)$, $a(t-\tau_D)$, and $a(t-\tau_R)$ are expressed as
+\begin{equation}
+\begin{split}
+	R_a(\tau)&=\langle a^*(t)a(t +\tau)\rangle \\
+    R_a(\tau-\tau_{RD})&=\langle a^*(t-\tau_D)a(t -\tau_R+\tau)\rangle \\
+    R_a(\tau+\tau_{RD})&=\langle a^*(t-\tau_R)a(t -\tau_D+\tau)\rangle \\
+ \end{split}
+\end{equation}
+
+The correlation of noise $n_1$ and $n_2$ are defined as
+\begin{equation}
+\begin{split}
+	\langle n_1^*(t)n_1(t +\tau)\rangle &\approx \sigma^2_1 (\delta(\tau) +\tilde{n})\\
+    \langle n_2^*(t)n_2(t +\tau)\rangle &\approx \sigma^2_2 (\delta(\tau) +\tilde{n})\\
+    \langle n_1^*(t)n_2(t +\tau)\rangle &\approx \sigma_1 \sigma_2 \tilde{n}
+ \end{split}
+\end{equation}
+In which \bf [this is not a delta fucntion !] \rm
+	
+\[ \delta(\tau) = \left\{ 
+  \begin{array}{l l}
+    1 & \quad \text{if $\tau=0$}\\
+    0 & \quad \text{else}
+  \end{array} \right.\]
+
+
+ The auto-correlation $R_{11}$of $x_1$, auto-correlation $R_{22}$ of $x_2$, and cross-correlation $R_{12}$ of $x_1$ and $x_2$ can be derived by substituting (\ref{Eq:x1_x2_model}) into (\ref{Eq:correlation_def}) and applying (\ref{eqn:acfa1}) and (\ref{eqn:acfa2}). 
+  For the transfer switch configuration in which receiver (1) is connected to antenna (S) and receiver (2) is connected to antenna (E), the expressions for these three correlation functions are as follows. 
+\begin{equation}
+    \begin{split}
+	R_{11}(\tau_s) =  & \left\{  
+      \left( g^2_{1SD} + g^2_{1SR} \right) R_a(\tau_s) + 
+      \right. \\
+       & g_{1SD} g_{1SR} 
+     \left[ 
+          R_a(\tau_s-\tau_{RD})  e^{j\omega_c \tau_{RD}}+ 
+          R_a(\tau_s+\tau_{RD}) e^{-j\omega_c \tau_{RD} }
+     \right] \\
+      &+  \left. G_1\sigma^2_1 \delta(\tau_s)   \right\} 
+      e^{-j\Delta\omega_{IF}\tau_s}+ \tilde{n}_1    
+   \label{Eq:R11}
+   \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+	R_{22}(\tau_s) =  & \left\{  
+      \left( g^2_{2ED} + g^2_{2ER} \right) R_a(\tau_s) + 
+      \right. \\
+       & g_{2ED} g_{2ER} 
+     \left[ 
+          R_a(\tau_s-\tau_{RD})  e^{j\omega_c \tau_{RD}}+ 
+          R_a(\tau_s+\tau_{RD}) e^{-j\omega_c \tau_{RD} }
+     \right] \\
+      &+  \left. G_2\sigma^2_2 \delta(\tau_s) +   \right\} 
+      e^{-j\Delta\omega_{IF}\tau_s}+ \tilde{n}_2    
+   \label{Eq:R22}
+   \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+    	R_{12}(\tau_s) = & \left\{  
+       \left( g_{1SD} g_{2ED} + g_{1SR}g_{2ER} \right) R_a(\tau_s) +
+       \right. \\
+       & \left. 
+       g_{1SD} g_{2ER} R_a(\tau_s-\tau_{RD})  e^{j\omega_c \tau_{RD}}+ 
+       g_{1SR} g_{2ED} R_a(\tau_s+\tau_{RD})  e^{-j\omega_c \tau_{RD}}
+       \right\} e^{-j\Delta\omega_{IF}\tau_s} + \tilde{n}_{12}    
+   \label{Eq:R12}
+   \end{split}
+\end{equation}
+
+%
+% Older versions of the equations
+%\begin{equation}
+%\begin{split}
+%	R_{22}(\tau^s) = (&g^2_{2ED} + g^2_{2ER})R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+\\
+%    								 & g_{2ED} g_{2ER} (R_a(\tau^s-%\tau^s_{RD})e^{j\omega_e \tau_{RD}}+\\ &R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e %\tau_{RD}})e^{-j\Delta\omega_e\tau_s}+\\
+%&G_2\sigma^2_2(\delta(\tau^s) + \tilde{n})                                     
+%\end{split}
+%\label{Eq: R22}
+%\end{equation}
+%\begin{equation}
+%\begin{split}
+%	R_{12}(\tau^s) = (&g_{1SD} g_{2ED} + g_{1SR} %g_{2ER})R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+\\
+%    								 (& g_{1SD} g_{2ER} R_a(\tau^s-%\tau^s_{RD})e^{j\omega_e \tau_{RD}}+\\ &g_{1SR} g_{2ED} R_a(\tau^s+\tau^s_{RD})e^{-%j\omega_e \tau_{RD}})e^{j\Delta\omega_e\tau_s}+\\
+%&\sqrt{G_1 G_2}\sigma_1 \sigma_2 \tilde{n}                                     
+%\end{split}
+%\label{Eq: R12}
+%\end{equation}Where $\Delta \omega_e = \omega_e - \hat{\omega_e}$, $\tau^s$ are the %samples, and 
+
+The three noises, $\tilde{n}_1$, $\tilde{n}_2$, and $\tilde{n}_{12}$ are zero-mean and the following substitutions have been made
+\begin{eqnarray}
+	g_{1SD} &= \sqrt{G_1 G_{S,D} C_D} \label{Eq:g1sd} \\
+    g_{1SR} &= \sqrt{G_1 G_{S,R} C_R} \label{Eq:g1sr} \\
+    g_{2ED} &= \sqrt{G_2 G_{E,D} C_D} \label{Eq:g2ed} \\
+    g_{2ER} &= \sqrt{G_2 G_{E,R} C_R} \label{Eq:g2er}
+\end{eqnarray}
+
+
+
+\subsection{Observable and Forward Model}
+In order to derive the relationship between the numerical values of the three complex correlation functions $R_{11}$, $R_{22}$ and $R_{12}$, derived in the previous section, and the reflectivity, $\Gamma$, we will first consider an ideal case using  
+antennas has perfect isolation of the desired signal, such that
+ $G_{S,R}\approx 0 $ and $G_{E,D}\approx 0$. 
+Moreover, assume a perfect downconversion to baseband, so that the immediate frequency $\omega_{IF} \approx 0$. 
+A calibration process, described in XXX,  is used to obtain the antenna gains, $G_{S,D}$, $G_{S,R}$, $G_{E,R}$, $G_{E,D}$, the ratio of receiver gains, $(G_1/G_2)$ and the noise floors $\sigma_1$, $\sigma_2$. 
+Once these parameters, assumed to remain constant after calibration, are obtained, the following observable is formed. 
+\begin{eqnarray}
+ \Gamma_{12} =	\sqrt{\frac{G_1}{G_2}}\sqrt{\frac{G_{S,D}}{G_{E,R}}} \frac{\tilde{R}_{12}(\tau^s_{RD})}{\tilde{R}_{12}(0)-G_1\sigma_1^2}  
+    \label{Eq:Gamma_estimation_approx}
+\end{eqnarray}
+Substitution of (\ref{Eq:R11}), (\ref{Eq:R22}), and (\ref{Eq:R12}) into
+(\ref{Eq:Gamma_estimation_approx}), with the assumptions that $G_{S,R}=0$, 
+$G_{E,D}=0$ and $R_a(0)=1$, results in
+\begin{equation}
+\Gamma_{12} = \sqrt{\frac{G_1}{G_2}} \sqrt{\frac{G_{S,D}}{G_{E,R}}} 
+  \frac{e^{-j \omega_c \tau_{RD}} g_{1SD} g_{2ER} + \tilde{n}_{12}}
+     {g_{1SD}^2 + \tilde{n}_1}
+     \label{Eq:Gamma_estimation_approx_subst1}
+\end{equation}
+%\approx\sqrt{\hat{\Gamma}}e^{j\omega_e \tau_{RD}} 
+Assuming a high signal to noise ratio, as would be expected for satellite communication signals, $\tilde{n}_1$ and $\tilde{n}_{12}$ can be combined into a single additive noise term using a first-order Taylor series expansion
+\begin{equation}
+    \frac{A+\tilde{n}_{A}}{B+\tilde{n}_B} \approx \frac{A}{B} + 
+   \frac{1}{B}\left[ \tilde{n}_{A} - \frac{A}{B}\tilde{n}_B\right] =\frac{A}{B}    +\tilde{n}_{\Gamma}
+\end{equation}
+if $|A|>> |n_A|$ and $|B| >> |n_B|$.
+Substituting (\ref{Eq:g1sd}) and (\ref{Eq:g2er}), with the high SNR assumption, reduces (\ref{Eq:Gamma_estimation_approx_subst1}) to 
+\begin{equation}
+    \Gamma_{12} = \Gamma e^{-j \omega_c \tau{RD}} + \tilde{n}_\Gamma
+\end{equation}
+in which $\tilde{n}_\Gamma$ is a zero-mean random variable. 
+This shows one approach to estimating the reflectivity, $\Gamma$ is through forming the observable $\Gamma_{12}$ defined in (\ref{Eqn:Gamma_estimation_approx}) and then computing the magnitude.  
+Knowledge of the path delay, $\tau_{RD}$, is not required, as this will be manifested as a rotation of $\Gamma_{12}$ in the complex plane. 
+A value for $\tau_{RD}$ is necessary for the argument of $R_{1,2}(\tau_{RD})$, however the required precision of this is not high, as the bandwidth of P-band SoOp signals is very low (25~KHz) which means that $R_a(\gamma)$ will have a support of about 12~km in delay.  
+The dependence of the phase of $\Gamma$ on the path delay will be much more sensitive, however, going through one complete cycle for a 1.2~m change in altitude.  
+Path delay will depend upon the aircraft altitude and the terrain elevation. 
+Through this formulation in the complex plane, the retrieval is not sensitive to accurate knowledge of the path delay.  This sensitivity will be explored later in section XXX.
+
+
+Given the long wavelength of P-band signals and the practical limitations of designing an antenna for use on aircraft, an antenna with perfect isolation of the direct and reflected signals will not possible. 
+An observable and forward model must be developed, which accounts for the interference between the direct and reflected signals, due to non-negligible gains $G_{S,R}$ and $G_{E,D}$. 
+
+In general, the $\Gamma_{12}$ observable can be written in the form of an observation equation as a function of two variable,s $\Gamma$ and the phase difference along the reflected ray path, $\phi = \omega_c \tau_{RD}$, with  additive noise.  $\tilde{n}_{\Gamma}$. 
+\begin{equation}
+\Gamma_{12} = f(\Gamma, \phi) + \tilde{n}_{\Gamma}
+  \label{eqn:observation_eqn_general}
+\end{equation}
+A full expression for $f(\Gamma, \phi)$, removing the assumption of perfect isolation, is given by
+\begin{equation}
+f(\Gamma, \phi) =
+	\frac{(\sqrt{I_E}+\sqrt{I_S}\Gamma)R_a(\tau_{RD})+\sqrt{\Gamma} 
+    e^{j\phi}+\sqrt{I_S I_E\Gamma} R_a(2\tau_{RD})e^{-j\phi}} 
+    {1 + I_S \Gamma + 2 \sqrt{I_S \Gamma} \mathcal{Re}[ R_a(\tau_{RD})] \cos \phi}
+        \label{Eq:Gamma_estimation}
+\end{equation}
+%
+%                   {(1 + I_S)\Gamma)R_a(0)+2\sqrt{I_S\Gamma} R_a(\tau^s_{RD})cos\phi}  
+The isolation of sky-view and earth-view antenna are denoted as
+\begin{eqnarray}
+    I_S& = \frac{G_{SR}}{G_{SD}}\\
+   I_E& = \frac{G_{ED}}{G_{ER}}
+\end{eqnarray}
+
+\subsection{Reflectivity Retrieval}
+Equation (\ref{Eq: Gamma_estimation_approx1}), when plotted in the complex plane in figure XXX will shows the effect of the antenna isolation. 
+In this figure, curves for the complex function $f(\Gamma, phi)$ are a set of reflectivities, over the range $-\pi \leq \phi \leq \pi$.
+On the top is the example of perfect isolation presented earlier, in which each reflectivity corresponds to a circle centered on the origin. 
+The lower figure is a more realistic example, using the preliminary system design parameters from table XXX. 
+As can be seen, the effects of non-zero $I_E$ and $I_S$ are to transform this circle into an ellipse, and shift its center away from the origin. 
+The important consideration, however, is that the curves for different reflectivities do not intersect and thus there is a unique mapping between the real and imaginary parts of the observable and ($\Gamma$, $\phi$).  
+
+Retrieval of a reflectivity estimate, $\hat{\Gamma}$ can therefore be found from the complex observable $\Gamma_{12}$ simply by numerical solution of the system of equations
+\begin{equation}
+\Gamma_{1,2} - f(\hat{Gamma}, \hat{\phi}) = 0
+\label{eqn:2x2solution}
+\end{equation}
+with $\hat{\phi}$ produced as an auxilliary (\bf correct term ??? \rm) variable to account for the rotation in the complex plane due to the unknown path delay.  
+As with the ideal case, this eliminates the need for high-precision knowledge of the aircraft altitude or terrain.  Newton's method worked well for the solution of (\ref{eqn:2x2solution}). 
+
+\begin{table}[ht]
+\centering
+\begin{tabular}  {|c|c|c|c|}
+	\hline
+     \textbf{Parameter} & \textbf{Symbol}	& \textbf{Value} &	\textbf{units}  \\
+     \hline
+     Incident Direct Power &	$C_T$ & XXX  & 	dBW	\\
+          \hline
+     Noise Power &	$\sigma_1^2$, $\sigma_2^2$ & XXX  & 	dBW	\\
+     \hline
+     Antenna Gain &	$G_{SD}$ & XXX  & 	dB	\\
+    \hline
+         Antenna Gain &	$G_{SR}$ & XXX  & 	dB	\\
+    \hline
+         Antenna Gain &	$G_{ED}$ & XXX  & 	dB	\\
+    \hline
+             Antenna Gain &	$G_{ED}$ & XXX  & 	dB	\\
+    \hline
+\end{tabular}
+\caption{System design specifications}
+\label{tab:sysparam}
+\end{table}
+
+
+
+\subsection{Calibration}
+\label{sec:calibration}
+In the reflectivity estimation described above, there are six parameters which must calibrated for the system, antenna gains in the directions of direct and reflected ray paths ($G_{S,D}$, $G_{S,R}$, $G_{E,D}$, $G_{E,R}$, the channel gain ratio ($G_1/G_2$), and the two noise floors $\sigma_1$, $\sigma_2$. 
+Of these, we will assume that the four antenna gain values are properties of the antenna design and integration on the airframe and will remain constant. 
+A companion paper, describing the antenna design and the in-flight calibration process, is being written.  
+For the present study, we will use nominal values for these gains, as given in table \ref{tab:sysparam}.
+The noise power and receiver gains, however, are expected to vary with time and will need to be periodically calibrated. 
+Two approaches are used for this calibration, antenna swapping and injection of a noise source. 
+Figure \ref{fig:Hardware} shows the architecture of calibration chain.
+
+\bf I did not edit the subsections on the calibration - only broke a longer section into the 2 subsections \rm
+
+\subsubsection{Calibration Noise Load}
+In Figure \ref{fig:Hardware}, $T_{cal}$ is noise temperature of the calibrated noise load, $T_{REF}$ is noise temperature of RF terminator, $T_{sys1,pre}$ and $T_{sys2,pre}$is noise of channel 1 and 2, respectively, prior the transfer switch, $T_{sys1,post}$ and $T_{sys2,post}$is noise of channel 1 and 2, respectively, after the transfer switch, and $T_{ant,S}$ and $T_{ant,E}$is noise of sky-view and earth-view antenna, respectively. There are three modes of calibration chain. The noise power $\sigma^2$ is given by
+\begin{equation}
+	\sigma^2=\kappa TB
+\end{equation}
+Where $\kappa$ is the Boltzmen constant, $T$ is noise temperature, and $B$ is bandwidth. The first mode is normal mode which means there is no additional noise in the system, and the correlations $\tilde{R}^n$ in Equation \ref{Eq: R11_reduce}, \ref{Eq: R22_reduce}, and \ref{Eq: R11_reduce} can be rewrote as
+\begin{eqnarray}
+	\tilde{R}_{11}^n(\tau^s) &&= g^2_{1SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_1(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys1,post}) \delta(\tau^s)                                      
+\label{Eq: R11_reduce_norm} \\
+	\tilde{R}_{22}^n(\tau^s) &&= g^2_{2ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_2(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys2,post}) \delta(\tau^s)                                       
+\label{Eq: R22_reduce_norm} \\
+	\tilde{R}_{12}^n(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}  
+\label{Eq: R12_reduce_norm}
+\end{eqnarray}
+Once the transfer switch is activated, the the correlations $\tilde{R}^s$ become
+\begin{eqnarray}
+\tilde{R}_{11}^s(\tau^s) &&= g^2_{1ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_1(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys1,post}) \delta(\tau^s)                                       
+\label{Eq: R22_reduce_swap} \\
+\tilde{R}_{22}^s(\tau^s) &&= g^2_{2SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_2(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys2,post}) \delta(\tau^s)                                      
+\label{Eq: R11_reduce_swap} \\
+	\tilde{R}_{12}^s(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}  
+\label{Eq: R12_reduce_swap}
+\end{eqnarray}
+When the system injects noise from noise load, the the correlations $\tilde{R}^c$ is changed as
+\begin{eqnarray}
+	\tilde{R}_{11}^c(\tau^s) &&= g^2_{1SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_1(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys1,post}+\sigma^2_{cal}) \delta(\tau^s)                                      
+\label{Eq: R11_reduce_cal} \\
+	\tilde{R}_{22}^n(\tau^s) &&= g^2_{2ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
+G_2(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys2,post}+\sigma^2_{cal}) \delta(\tau^s)                                       
+\label{Eq: R22_reduce_cal} \\
+	\tilde{R}_{12}^n(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}\delta(\tau^s)+
+    \sqrt{G_1 G_2}\sigma^2_{cal}\delta(\tau^s)  
+\label{Eq: R12_reduce_cal}
+\end{eqnarray}The last mode switches the signal sources to reference load in the following equation.
+\begin{eqnarray}
+	\tilde{R}_{11}^r(\tau^s) &&= G_1(\sigma^2_{REF}+\sigma^2_{sys1,post}) \delta(\tau^s)                                      
+\label{Eq: R11_reduce_ref} \\
+	\tilde{R}_{22}^r(\tau^s) &&= G_2(\sigma^2_{REF}+\sigma^2_{sys2,post}) \delta(\tau^s)                                
+\label{Eq: R22_reduce_ref} \\
+	\tilde{R}_{12}^r(\tau^s) &&= 0 
+\label{Eq: R12_reduce_ref}
+\end{eqnarray}
+\section{The injection of noise from noise source and terminator}
+The channel gains $G_1$ and $G_2$ are estimated from  $\tilde{R}^n_*$ in Equations \ref{Eq: R11_reduce_norm}-\ref{Eq: R12_reduce_norm} and $\tilde{R}^c_*$ in Equations \ref{Eq: R11_reduce_cal}-\ref{Eq: R12_reduce_cal}, and the noise power from noise load $\sigma^2_{cal}$. The product of channel gain and $\sigma^2_{cal}$ is calculated in
+\begin{eqnarray}
+	\tilde{R}^c_{11}(0) - \tilde{R}^n_{11}(0)&&= G_1\sigma^2_{cal} \label{Eq: Cal_channel_gain1a} \\
+    \tilde{R}^c_{22}(0) - \tilde{R}^n_{22}(0)&&= G_2\sigma^2_{cal} \label{Eq: Cal_channel_gain2a} \\
+    \tilde{R}^c_{12}(\tau_{RD}) - \tilde{R}^n_{12}(\tau_{RD})&&= \sqrt{G_1 G_2}\sigma^2_{cal} \label{Eq: Cal_channel_gain12a}
+\end{eqnarray}
+Once $\sigma^2_{cal}$ is well measured, 
+\begin{eqnarray}
+	G_1 &&= \frac{\tilde{R}^c_{11}(0) - \tilde{R}^n_{11}(0)}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain1} \\
+    G_2 &&= \frac{\tilde{R}^c_{22}(0) - \tilde{R}^n_{22}(0)}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain2} \\
+    \sqrt{G_1 G_2} &&= \frac{\tilde{R}^c_{12}(\tau_{RD}) - \tilde{R}^n_{12}(\tau_{RD})}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain12}
+\end{eqnarray}
+
+The noise of channel 1 and 2 after the transfer switch are further estimated by substituting $G_1$ and $G_2$ into Equations \ref{Eq: R11_reduce_ref} and \ref{Eq: R22_reduce_ref}. The Equations \ref{Eq: R11_reduce_ref} and \ref{Eq: R22_reduce_ref} are rewrote as
+\begin{eqnarray}
+	\sigma^2_{sys1,post} &&= \frac{\tilde{R}^r_{11}(0) }{G_1}-\sigma^2_{REF}  \label{Eq: Cal_channel_noise1} \\
+    \sigma^2_{sys2,post} &&= \frac{\tilde{R}^r_{22}(0) }{G_2}-\sigma^2_{REF}  \label{Eq: Cal_channel_noise2} 
+\end{eqnarray}
+
+\subsubsection{Antenna swapping}
+The antenna swapping \cite{Alejandro:2013} is used for the estimation of the ratio of channel gain $\frac{G_1}{G_2}$, and it can be measured by the ratio of $\tilde{R}^s$ Equations \ref{Eq: R11_reduce_swap}-\ref{Eq: R12_reduce_swap} and $\tilde{R}^n$Equations \ref{Eq: R11_reduce_norm}-\ref{Eq: R12_reduce_norm}. When the noise of channels are approximately same, the ratio of channel gain is calculated as
+\begin{eqnarray}
+	\frac{G_1}{G_2} = \frac{\tilde{R}^n_{11}}{\tilde{R}^s_{11}} \\
+    \frac{G_1}{G_2} = \frac{\tilde{R}^s_{22}}{\tilde{R}^n_{22}}  \label{Eq: Cal_channel_gain_ratio}
+\end{eqnarray}
+
+
+\bf The following sections are outlines, with bullet points.  I have moved some of the UFO -system specific description into one of the sections, to describe the experimetnal work \rm
+
+\section{P-band Signal Sources}
+   \begin{itemize}
+     \item General description of allocation of 230-270 MHz band for Govt use
+     \item Published information about UFO - signal design, link budget, and orbits - be sure to cite the source of data
+     \item Description of field experiment to verify the properties, including the ambiguity function, nominal values for signal power, persistence of signals, etc ... 
+     \item summary of properties of UFO, and reference to table \ref{tab:sysparam}
+   \end{itemize}
+   
+   \bf this is directly from Zenki's draft: \rm 
+   
+   The Ultra High Frequency Follow-On (UFO) system is a communication satellite system whose function is to provide communications for airborne, ship, submarine and ground forces. UFO satellite system is a DOD sponsored program and operated by U.S. Navy. By now there are totally 11 satellites. The first launch is in Mar.1993 and the planned lifetime of UFO system is 14 years. It replaced FLTSATCOM and is scheduled to be replaced by MUOS. The orbit of UFO is geosynchronous orbit and the altitude is 32810 km. From F-1 to F-7, UFO satellites provide redundant command and ranging capabilities when the satellite is on station. The bandwidth of each satellite is 25 kHz and it is on board processing. According to the amateur radio website \cite{Matt:2014}, the frequencies from both satellites are as the following table. Table\ref{Table Band Plan} indicates the location for band plan for UFO satellites.
 
 \begin{table}[ht]
 \centering
@@ -507,30 +1047,61 @@ The Ultra High Frequency Follow-On (UFO) system is a communication satellite sys
 \label{Table Band Plan}
 \end{table}
 
-\subsection{Global Navigation Satellite System  Reflectometry (GNSS+R)}
 
-GNSS-R is a bistatic radar configuration, using the existing GNSS signals as the illumination source, producing a measurement of surface reflectivity, $\Gamma$, that is directly related to emissivity, $\epsilon$, through conservation of energy; $ \Gamma = 1 - \epsilon $ \cite{Jin:2011}. GNSS-R thus provides a measurement of the exact physical property sensed by microwave radiometry, but with a substantially higher power due to the forward-scatter geometry and an active transmitter. This could enable a satellite receiver with a much smaller antenna, as compared to a radar or radiometer, to be used for soil moisture sensing. GNSS signals are designed with strong anti-jamming capabilities, a feature that should translate into a high RFI resistance for GNSS-R measurements, as compared to passive microwave radiometry. GNSS-R measurements from satellite would provide global coverage as a result of the GNSS constellation design. GNSS, however, is also an L-band system (1575.42 MHz) and thus, the observed depth of soil moisture would not be an improvement over that provided by L-band
-radiometry (a few cm). The unique contribution of the research defined in this proposal would extend the penetration depth of soil moisture measurements by applying the GNSS-R technique to communication satellite signals at lower frequencies.
+\section{Measurement Simulation}
+   \begin{itemize}
+     \item description of the bit-level signal simulator
+   \end{itemize}
+   
+\section{Sensitivity Analysis and Error Budget}
+   \begin{itemize}
+     \item Error sources: antenna gain calibration uncertainty, aircraft motion, noise calibration uncertainty, etc.
+     \item Show sensitivity to error in each one of these and how it maps to error in the retrieval of reflectivity
+     \item special case of aircraft motion and integration time.
+     \item Summary table for each error source with an RSS of the error - this will be in the form of a budget - our requirements on each component of the system - to meet our working requirement.
+     \item End-to-end "ensemble" simulation, of a large number of cases distributed over a range of soil moistures, noise figures, etc ...
+   \end{itemize}
+   
+   
+\section{Field Experiment}
+   \bf Joe ? Jeff ? \rm 
 
-\subsection{Fresnel reflection}
-Figure \ref{fig:Fresnel zone} indicates the Fresnel zone with specular point. The Fresnel zone can be calculated by
-\begin{equation}
-	F_n=\sqrt{n \lambda \frac{D_{TS}D_{RS}}{D_{TS}+D_{RS}}} \label{Eq: Fresnel_zone}
-\end{equation}
-Where $n$ is nth Fresnel zone, $\lambda$ is the wavelength of signal, $D_{TS}$ is the distance between the transmitter and specular point, $D_{RS}$ is the distance between the receiver and specular point. Because $D_{TS}$ is extremely large than $D_{RS}$, the equation can be re-written as,
-\begin{equation}
-	F_n=\sqrt{n \lambda D_{RS}} \Rightarrow F_n=\sqrt{\frac{\lambda h}{sin\theta} } \label{Eq: Fresnel_zone_reduce}
-\end{equation}
-Where $h$ is the height and $\theta$ is the elevation angle.
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=2.5in]{pdf/Fresnel_zone.pdf}
-	\caption{Fresnel zone for the specular point.}
-    \centering
-	\label{fig:Fresnel zone}
-\end{figure}
 
-\section{Soil moisture and reflectivity}
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+\appendices
+\section{P-Band UHF-Follow On Satellites}
+
+Dont know if this needs to go here or in a later section - dont introduct it in the beginning - start with the fundamental problem and solution first, then go into the specific implementation later. 
+
+
+
+
+\section{Working area- stuff cut out}
+
+Most of this wont be needed - we will replace it with a citation to the relevant papers. I left a much reduced version in the first section of the paper. 
+
+%\section{Soil moisture and reflectivity}
 Dielectric constant of soil is a function Reflectivity is estimated by the measurement of SoOp, and the soil Dielectric constant is a very import factor for studying the reflectivity. The dielectric constant of media depends on the properties of media, for example, the dielectric constant of water can be calculated by temperature, salinity, and frequency.
 \section{Reflectivity}
 
@@ -629,8 +1200,8 @@ Where $\hat{u}$ is the coordinate, the subscripts $h$ and $v$ represent the hori
 % footnotes above bottom floats. This can be corrected via the
 % \fnbelowfloat command of the stfloats package.
 
-\section{Dielectric constant of the soil}
-\label{sec:DC_soil}
+%\section{Dielectric constant of the soil}
+%\label{sec:DC_soil}
 Dieletric constant of soil mixture depends on the frequency, temperature, salinity of soil, the bulk soil density, and soil moisture \cite{Peplinski:1995,Peplinski_correct:1995}.
 
 \begin{equation} \label{eq: soil_dielectric_main}
@@ -673,27 +1244,7 @@ where $\varepsilon_0$ is the permittivity of free space, $\tau_w$ represents the
 \begin{equation}
 	\sigma_{eff} = 0.0467+0.2204\rho_b-0.4111Soil_{sand}+0.6614Soil_{clay}
 \end{equation}
-Penetration depth is the decay of electromagnetic waves inside a material, and power of the field decays to $\frac{1}{e}$ of its surface value \cite{Ulaby:1981} . The penetration depth is given by
-\begin{eqnarray}
-	\alpha &&= \frac{2\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}}) \\
-    \delta_p &&= \frac{\alpha}{2}
-\end{eqnarray}
-Where  $\alpha$ attenuation constant.
 
-\section{Soil moisture retrieval from reflectivity}
-The dielectric constant of soil depends on the soil moisture in Equation \ref{eq: soil_dielectric_main} and the reflectivity is a function of the dielectric constant in Equation \ref{Eq: reflectivity_di}. Therefore, the relationship between the soil moisture and reflectivity can be established as shown in the top figure of  Figure \ref{fig:reflect_mv} when the soil texture, frequency, and salinity are known. The reflectivity of the same polarization is neglect since it is relatively small than the one of reverse polarization. The bottom figure of Figure \ref{fig:reflect_mv} is the inverse of the top figure, and the polynomial fit is used to retrieve soil moisture from reflectivity.
-
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=4in]{pdf/gamma_vs_mv1.pdf}
-	\caption{The reflectivity vs. soil moisture ($\%$) for the circular polarization}
-	\centering
-	\label{fig:reflect_mv}
-\end{figure}
- The coefficients of a polynomial $P(x)$ of degree $N$ is given by
- \begin{equation}
-	P(1)x^N+P(2)x^{N-1}+\cdots+P(N)x+P(N+1)
-\end{equation} The coefficients of a polynomials in Figure \ref{fig:mv_reflect} are lists in Table \ref{Table:Polynomial_fitting}
 
 \begin{table}[ht]
 \centering
@@ -712,150 +1263,8 @@ The dielectric constant of soil depends on the soil moisture in Equation \ref{eq
 \label{Table:Polynomial_fitting}
 \end{table}
 
-\section{Signal and correlation model}
-The transmitted signal from a satellite ($x_{T}$) is modeled as
-\begin{equation}
-	x_T(t)=\sqrt{C_T}a(t)e^{j\omega_et},
-    \label{Eq: xT}
-\end{equation}
-where the transmitted carrier power is $C_{T}$, $a(t)$ is the modulation, $ω_{e}$ is the free space frequency. The received signals at the object with antenna along the direct and reflected path ray can be represented \begin{equation}
-	\begin{split}
-  	x_D(t)&=\sqrt{C_D}a(t-\tau_D)e^{j\omega_e(t-\tau_D)}, \\
-    x_R(t)&=\sqrt{C_R}a(t-\tau_R)e^{j\omega_e(t-\tau_R)}, 
-    \end{split}
-    \label{Eq: xD_xR}
-\end{equation}
-where $C_D$ and $C_R$ are received power of signals along direct and reflected path, and $\tau_D$ and $\tau_R$ are the path delay along the direct and reflected path. The reflectivity $\Gamma$ is defined as
-\begin{equation}
-	\Gamma=\frac{C_R}{C_D}
-    \label{Eq: reflect}
-\end{equation}
- After the receiver receives the signals, the models of signal for channel 1 and 2 are given by
- \begin{equation}
-  \begin{split}
-  	x_1(t)&=\sqrt{G_1}(\sqrt{G_{S,D}} x_D(t)) + \sqrt{G_{S,R}} x_R(t) + n_1)e^{-j\hat{\omega}_et},\\
-    x_2(t)&=\sqrt{G_2}(\sqrt{G_{E,D}} x_D(t)) + \sqrt{G_{E,R}} x_R(t) + n_2)e^{-j\hat{\omega}_et},
-  \end{split}
-  \label{Eq: x1_x2_model}
-\end{equation}
-where $G$ is the gain in power ratio, $n$ is the noise with zero-mean, Gaussian, thermal noise with power spectra $\sigma^2_1$ and $\sigma^2_2$, and $\hat{\omega}_e$ is the down-convert frequency; the subscript $1$ and $2$ represent channel 1 and 2, and the subscript $S$ and $E$ denote the sky-view and earth-view antenna. Figure \ref{fig:ant_gain} shows the gain of sky-view and earth-view antenna along the direct and reflect paths.
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=2.5in]{pdf/ant_gain.jpg}
-	\caption{The gain of sky-view and earth-view antenna for the direct and reflected path rays..}
-	\centering
-	\label{fig:ant_gain}
-\end{figure}
 
-\section{Correlation}
-
-The correlation of two signals ($x_p$ and $x_q$) is defined as
-\begin{eqnarray}
-	R_{pq}(\tau)  = \langle x_p^*(t)x_q(t+\tau)\rangle=\frac{1}{T_I} \int_{T_I}x_p^*(t) x_q(t+\tau)dt \\ 
-    R_{pq}(\tau-\tau_{qp}) =\langle x_p^*(t-\tau_p)x_q(t-\tau_q +\tau)\rangle
-    \label{Eq: correlation_def}
-\end{eqnarray}
-Where $\tau_{qp}$ is the difference between the delay of $x_p$ and $x_q$, and $T_I$ is the integration time. The correlation $R_a(\tau)$ of $a(t)$, $a(t-\tau_D)$, and $a(t-\tau_R)$ are expressed as
-\begin{equation}
-\begin{split}
-	R_a(\tau)&=\langle a^*(t)a(t +\tau)\rangle \\
-    R_a(\tau-\tau_{RD})&=\langle a^*(t-\tau_D)a(t -\tau_R+\tau)\rangle \\
-    R_a(\tau+\tau_{RD})&=\langle a^*(t-\tau_R)a(t -\tau_D+\tau)\rangle \\
- \end{split}
-\end{equation}
-
-The correlation of noise $n_1$ and $n_2$ are defined as
-\begin{equation}
-\begin{split}
-	\langle n_1^*(t)n_1(t +\tau)\rangle &\approx \sigma^2_1 (\delta(\tau) +\tilde{n})\\
-    \langle n_2^*(t)n_2(t +\tau)\rangle &\approx \sigma^2_2 (\delta(\tau) +\tilde{n})\\
-    \langle n_1^*(t)n_2(t +\tau)\rangle &\approx \sigma_1 \sigma_2 \tilde{n}
- \end{split}
-\end{equation}
-In which
-	
-\[ \delta(\tau) = \left\{ 
-  \begin{array}{l l}
-    1 & \quad \text{if $\tau=0$}\\
-    0 & \quad \text{else}
-  \end{array} \right.\]
-
-$\tilde{n}$ is the residual with zero mean. The auto-correlation $R_{11}$of $x_1$, auto-correlation $R_{22}$ of $x_2$, and cross-correlation $R_{12}$ of $x_1$ and $x_2$ can be derived by substituting Equation \ref{Eq: x1_x2_model} into Equation \ref{Eq: correlation_def}.
-\begin{equation}
-\begin{split}
-	R_{11}(\tau^s) = (&g^2_{1SD} + g^2_{1SR})R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+\\
-    								 & g_{1SD} g_{1SR} (R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}}+\\ &R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e \tau_{RD}})e^{-j\Delta\omega_e\tau_s}+\\
-&G_1\sigma^2_1(\delta(\tau^s) + \tilde{n})                                     
-\end{split}
-\label{Eq: R11}
-\end{equation}
-\begin{equation}
-\begin{split}
-	R_{22}(\tau^s) = (&g^2_{2ED} + g^2_{2ER})R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+\\
-    								 & g_{2ED} g_{2ER} (R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}}+\\ &R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e \tau_{RD}})e^{-j\Delta\omega_e\tau_s}+\\
-&G_2\sigma^2_2(\delta(\tau^s) + \tilde{n})                                     
-\end{split}
-\label{Eq: R22}
-\end{equation}
-\begin{equation}
-\begin{split}
-	R_{12}(\tau^s) = (&g_{1SD} g_{2ED} + g_{1SR} g_{2ER})R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+\\
-    								 (& g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}}+\\ &g_{1SR} g_{2ED} R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e \tau_{RD}})e^{j\Delta\omega_e\tau_s}+\\
-&\sqrt{G_1 G_2}\sigma_1 \sigma_2 \tilde{n}                                     
-\end{split}
-\label{Eq: R12}
-\end{equation}Where $\Delta \omega_e = \omega_e - \hat{\omega_e}$, $\tau^s$ are the samples, and 
-\begin{eqnarray}
-	g_{1SD} &= \sqrt{G_1 G_{S,D} C_D} \\
-    g_{1SR} &= \sqrt{G_1 G_{S,R} C_R} \\
-    g_{2ED} &= \sqrt{G_2 G_{E,D} C_D} \\
-    g_{2ER} &= \sqrt{G_2 G_{E,R} C_R} \label{Eq:total gain}
-\end{eqnarray}
-
-\section{Reflectivity estimation}
-When the antenna has high isolation, which means $G_{S,D} >> G_{S,R}, $ and $G_{E,R} >> G_{E,D}$, and the standard deviation of $\tilde{n}$ is neglect. Moreover, the offset of immediate frequency $\Delta\omega_e$ is ignored. Equations \ref{Eq: R11}, \ref{Eq: R22}, and \ref{Eq: R12} can be reduced as
-\begin{equation}
-	\tilde{R}_{11}(\tau^s) = g^2_{1SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_1\sigma^2_1 \delta(\tau^s)                                      
-\label{Eq: R11_reduce}
-\end{equation}
-\begin{equation}
-	\tilde{R}_{22}(\tau^s) = g^2_{2ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_2\sigma^2_2 \delta(\tau^s)                                      
-\label{Eq: R22_reduce}
-\end{equation}
-\begin{equation}
-	\tilde{R}_{12}(\tau^s) = g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}}             
-\label{Eq: R12_reduce}
-\end{equation}
-
-The simple reflectivity estimation is the ratio of $\tilde{R}_{12}(\tau_{RD})$ and $\tilde{R}_{11}(0)$. $\tilde{R}_{11}(0)$, $\tilde{R}_{22}(0)$, and $\tilde{R}_{12}(\tau_{RD})$ are given by substituting $0$ and $\tau_{RD}$ into Equations \ref{Eq: R11_reduce} , \ref{Eq: R22_reduce}, and \ref{Eq: R12_reduce}.
-\begin{align}
-	\tilde{R}_{11}(0) &= g^2_{1SD} R_a(0)+G_1\sigma^2_1\\ 
-    \tilde{R}_{22}(0) &= g^2_{2ER} R_a(0)+G_2\sigma^2_2\\ 
-    \tilde{R}_{12}(\tau_{RD}) &= g_{1SD}  g_{2ER}R_a(\tau_{RD})e^{-j\omega_e \tau_{RD}}e^{j\Delta\omega_e\tau_{RD}}
-\label{Eq: R11_reduce}
-\end{align}The reflectivity can be estimated from the ratio of $g_{2ER}$ and $g_{1SD}$. 
-\begin{eqnarray}
-	\frac{g_{2ER}}{g_{1SD}} &&= \sqrt{\frac{G_2 G_{E,R} C_R}{G_1 G_{S,D} C_D}}  = \sqrt{ \frac{G_2 G_{E,R}}{G_1 G_{S,D}} \Gamma}  \nonumber \\
-    \Rightarrow \sqrt{\hat{\Gamma}} &&= \sqrt{\frac{G_1}{G_2}\frac{G_{S,D}}{G_{E,R}}}
-\end{eqnarray}
-The approach to retrieve the reflectivity is showed as follows
-\begin{eqnarray}
-	\sqrt{\frac{G_1}{G_2}}\sqrt{\frac{G_{S,D}}{G_{E,R}}} \frac{\tilde{R}_{12}(\tau^s_{RD})}{\tilde{R}_{12}(0)-G_1\sigma_1^2}\approx\sqrt{\hat{\Gamma}}e^{j\omega_e \tau_{RD}}   
-    \label{Eq: Gamma_estimation_approx}
-\end{eqnarray}
-
-Where the ratio of channel gain $\frac{G_1}{G_2}$ can be estimated by the calibration in Equation \ref{Eq: Cal_channel_gain_ratio}. However, the antenna might not have high isolation, Equation \ref{Eq: Gamma_estimation_approx} is expanded as
-\begin{align}
-f(\Gamma, \phi)&=\sqrt{\frac{G_1}{G_2}}\sqrt{\frac{G_{S,D}}{G_{E,R}}} \frac{R_{12}(\tau^s_{RD})}{R_{12}(0)-G_1\sigma_1^2} \\
-	&=\frac{(\sqrt{I_E}+\sqrt{I_S}\Gamma)R_a(\tau^s_{RD})+\sqrt{\Gamma} R_a(0)e^{j\phi}+\sqrt{I_S I_E\Gamma} R_a(2\tau^s_{RD})e^{-j\phi} }                              
-                   {(1 + I_S)\Gamma)R_a(0)+2\sqrt{I_S\Gamma} R_a(\tau^s_{RD})cos\phi}  \\ 
-                   I_S& = \frac{G_{SR}}{G_{SD}}\\
-                   I_E& = \frac{G_{ED}}{G_{ER}}
-    \label{Eq: Gamma_estimation_approx1}
-\end{align}
-Where   the phase is $\phi = \omega_e \tau_{RD}$, the isolation of sky-view and earth-view antenna are denoted as $I_S$ and $I_E$, and the auto-correlation $R_a$ is an even function.  Since Equation \ref{Eq: Gamma_estimation_approx1} is a complex function,  it can be split into real and imagine parts as
+\bf This is just a derivation of Newton's method ... \rm
 \begin{eqnarray}
 f_{Re}(\Gamma, \phi)=&\frac{(\sqrt{I_E}+\sqrt{I_S}\Gamma)R_a(\tau^s_{RD})+(\sqrt{\Gamma} R_a(0)+\sqrt{I_S I_E\Gamma} R_a(2\tau^s_{RD}))cos\phi}                              
                    {(1 + I_S)\Gamma)R_a(0)+2\sqrt{I_S\Gamma} R_a(\tau^s_{RD})cos\phi}   \\
@@ -904,118 +1313,6 @@ The final solutions are obtained until  the difference between the measurement  
 \begin{bmatrix} f_{Re}(\Gamma, \phi) -  f_{Re}(\Gamma^{(n-1)}, \phi^{(n-1)})\\ f_{Im}(\Gamma, \phi) -  f_{Im}(\Gamma^{(n-1)}, \phi^{(n-1)})\end{bmatrix}
 \label{Eq: LQS3}
 \end{align}
-
-\section{Calibration}
-In the reflectivity estimation, the channel gain and channel noise need to be estimated. Figure \ref{fig:Hardware} shows the architecture of calibration chain.
-\begin{figure}[t!]
-	\centering
-	\includegraphics[width=2.5in]{pdf/hardware.pdf}
-	\caption{The calibration chain includes antenna swap and noise injection}
-	\centering
-	\label{fig:Hardware}
-\end{figure}
-In Figure \ref{fig:Hardware}, $T_{cal}$ is noise temperature of the calibrated noise load, $T_{REF}$ is noise temperature of RF terminator, $T_{sys1,pre}$ and $T_{sys2,pre}$is noise of channel 1 and 2, respectively, prior the transfer switch, $T_{sys1,post}$ and $T_{sys2,post}$is noise of channel 1 and 2, respectively, after the transfer switch, and $T_{ant,S}$ and $T_{ant,E}$is noise of sky-view and earth-view antenna, respectively. There are three modes of calibration chain. The noise power $\sigma^2$ is given by
-\begin{equation}
-	\sigma^2=\kappa TB
-\end{equation}
-Where $\kappa$ is the Boltzmen constant, $T$ is noise temperature, and $B$ is bandwidth. The first mode is normal mode which means there is no additional noise in the system, and the correlations $\tilde{R}^n$ in Equation \ref{Eq: R11_reduce}, \ref{Eq: R22_reduce}, and \ref{Eq: R11_reduce} can be rewrote as
-\begin{eqnarray}
-	\tilde{R}_{11}^n(\tau^s) &&= g^2_{1SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_1(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys1,post}) \delta(\tau^s)                                      
-\label{Eq: R11_reduce_norm} \\
-	\tilde{R}_{22}^n(\tau^s) &&= g^2_{2ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_2(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys2,post}) \delta(\tau^s)                                       
-\label{Eq: R22_reduce_norm} \\
-	\tilde{R}_{12}^n(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}  
-\label{Eq: R12_reduce_norm}
-\end{eqnarray}
-Once the transfer switch is activated, the the correlations $\tilde{R}^s$ become
-\begin{eqnarray}
-\tilde{R}_{11}^s(\tau^s) &&= g^2_{1ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_1(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys1,post}) \delta(\tau^s)                                       
-\label{Eq: R22_reduce_swap} \\
-\tilde{R}_{22}^s(\tau^s) &&= g^2_{2SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_2(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys2,post}) \delta(\tau^s)                                      
-\label{Eq: R11_reduce_swap} \\
-	\tilde{R}_{12}^s(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s+\tau^s_{RD})e^{-j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}  
-\label{Eq: R12_reduce_swap}
-\end{eqnarray}
-When the system injects noise from noise load, the the correlations $\tilde{R}^c$ is changed as
-\begin{eqnarray}
-	\tilde{R}_{11}^c(\tau^s) &&= g^2_{1SD} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_1(\sigma^2_{Ant,S}+\sigma^2_{sys1,pre} +\sigma^2_{sys1,post}+\sigma^2_{cal}) \delta(\tau^s)                                      
-\label{Eq: R11_reduce_cal} \\
-	\tilde{R}_{22}^n(\tau^s) &&= g^2_{2ER} R_a(\tau^s)e^{j\Delta\omega_e\tau_s}+
-G_2(\sigma^2_{Ant,E}+\sigma^2_{sys2,pre} +\sigma^2_{sys2,post}+\sigma^2_{cal}) \delta(\tau^s)                                       
-\label{Eq: R22_reduce_cal} \\
-	\tilde{R}_{12}^n(\tau^s) &&= g_{1SD} g_{2ER} R_a(\tau^s-\tau^s_{RD})e^{j\omega_e \tau_{RD}} e^{j\Delta\omega_e\tau_s}\delta(\tau^s)+
-    \sqrt{G_1 G_2}\sigma^2_{cal}\delta(\tau^s)  
-\label{Eq: R12_reduce_cal}
-\end{eqnarray}The last mode switches the signal sources to reference load in the following equation.
-\begin{eqnarray}
-	\tilde{R}_{11}^r(\tau^s) &&= G_1(\sigma^2_{REF}+\sigma^2_{sys1,post}) \delta(\tau^s)                                      
-\label{Eq: R11_reduce_ref} \\
-	\tilde{R}_{22}^r(\tau^s) &&= G_2(\sigma^2_{REF}+\sigma^2_{sys2,post}) \delta(\tau^s)                                
-\label{Eq: R22_reduce_ref} \\
-	\tilde{R}_{12}^r(\tau^s) &&= 0 
-\label{Eq: R12_reduce_ref}
-\end{eqnarray}
-\section{The injection of noise from noise source and terminator}
-The channel gains $G_1$ and $G_2$ are estimated from  $\tilde{R}^n_*$ in Equations \ref{Eq: R11_reduce_norm}-\ref{Eq: R12_reduce_norm} and $\tilde{R}^c_*$ in Equations \ref{Eq: R11_reduce_cal}-\ref{Eq: R12_reduce_cal}, and the noise power from noise load $\sigma^2_{cal}$. The product of channel gain and $\sigma^2_{cal}$ is calculated in
-\begin{eqnarray}
-	\tilde{R}^c_{11}(0) - \tilde{R}^n_{11}(0)&&= G_1\sigma^2_{cal} \label{Eq: Cal_channel_gain1a} \\
-    \tilde{R}^c_{22}(0) - \tilde{R}^n_{22}(0)&&= G_2\sigma^2_{cal} \label{Eq: Cal_channel_gain2a} \\
-    \tilde{R}^c_{12}(\tau_{RD}) - \tilde{R}^n_{12}(\tau_{RD})&&= \sqrt{G_1 G_2}\sigma^2_{cal} \label{Eq: Cal_channel_gain12a}
-\end{eqnarray}
-Once $\sigma^2_{cal}$ is well measured, 
-\begin{eqnarray}
-	G_1 &&= \frac{\tilde{R}^c_{11}(0) - \tilde{R}^n_{11}(0)}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain1} \\
-    G_2 &&= \frac{\tilde{R}^c_{22}(0) - \tilde{R}^n_{22}(0)}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain2} \\
-    \sqrt{G_1 G_2} &&= \frac{\tilde{R}^c_{12}(\tau_{RD}) - \tilde{R}^n_{12}(\tau_{RD})}{\sigma^2_{cal}}  \label{Eq: Cal_channel_gain12}
-\end{eqnarray}
-
-The noise of channel 1 and 2 after the transfer switch are further estimated by substituting $G_1$ and $G_2$ into Equations \ref{Eq: R11_reduce_ref} and \ref{Eq: R22_reduce_ref}. The Equations \ref{Eq: R11_reduce_ref} and \ref{Eq: R22_reduce_ref} are rewrote as
-\begin{eqnarray}
-	\sigma^2_{sys1,post} &&= \frac{\tilde{R}^r_{11}(0) }{G_1}-\sigma^2_{REF}  \label{Eq: Cal_channel_noise1} \\
-    \sigma^2_{sys2,post} &&= \frac{\tilde{R}^r_{22}(0) }{G_2}-\sigma^2_{REF}  \label{Eq: Cal_channel_noise2} 
-\end{eqnarray}
-\section{Antenna swapping}
-The antenna swapping \cite{Alejandro:2013} is used for the estimation of the ratio of channel gain $\frac{G_1}{G_2}$, and it can be measured by the ratio of $\tilde{R}^s$ Equations \ref{Eq: R11_reduce_swap}-\ref{Eq: R12_reduce_swap} and $\tilde{R}^n$Equations \ref{Eq: R11_reduce_norm}-\ref{Eq: R12_reduce_norm}. When the noise of channels are approximately same, the ratio of channel gain is calculated as
-\begin{eqnarray}
-	\frac{G_1}{G_2} = \frac{\tilde{R}^n_{11}}{\tilde{R}^s_{11}} \\
-    \frac{G_1}{G_2} = \frac{\tilde{R}^s_{22}}{\tilde{R}^n_{22}}  \label{Eq: Cal_channel_gain_ratio}
-\end{eqnarray}
-
-\section{Conclusion}
-The conclusion goes here.
-
-
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-
-\appendices
-\section{Proof of the First Zonklar Equation}
-Appendix one text goes here.
-
-% you can choose not to have a title for an appendix
-% if you want by leaving the argument blank
-\section{}
-Appendix two text goes here.
 
 
 % use section* for acknowledgment
