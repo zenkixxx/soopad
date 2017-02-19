@@ -1,4 +1,4 @@
-%%  
+%%  JLG input 2/18/2017 
 %% TGARS Draft - JLG input 8/11/2016
 %%bare_jrnl.tex
 %% V1.4a
@@ -17,7 +17,7 @@
 %% and
 %% http://www.ieee.org/
 
-%%*************************************************************************
+%%************************************************************************
 %% Legal Notice:
 %% This code is offered as-is without any warranty either expressed or
 %% implied; without even the implied warranty of MERCHANTABILITY or
@@ -156,7 +156,7 @@
 % http://www.tug.org/applications/pdftex
 
 
-
+\usepackage{diagbox}
 
 
 % *** MATH PACKAGES ***
@@ -221,9 +221,6 @@
 % IEEEtran contains the IEEEeqnarray family of commands that can be used to
 % generate multiline equations as well as matrices, tables, etc., of high
 % quality.
-
-
-
 
 % *** SUBFIGURE PACKAGES ***
 %\ifCLASSOPTIONcompsoc
@@ -497,82 +494,11 @@ To observe the soil moisture of different depths, the signals with various frequ
 
 \section{Basic Principles}
 
-\bf JLG notes - organization of this section \rm 
-The relationship between reflectivity $\Gamma$ and emissivity $T$ is expressed in the following equation,
-\begin{equation}
-\Gamma + T = 1
-\end{equation}
-which is a statement of energy conversation \cite{Ulaby:1981}. The reflectivity depends on the incident angle and dieletric constant of media.
-Relationship between reflectivity, emissivity and soil moisture - summary of results of models.  Reference, don't give a full derivation of existing models.
+[JLG - here the basic physics:  soil moisture to reflectivity, to correlation, details of the signal model for the instrument come later]
 
-Relationship between sensing depth, penetration depth, frequency and soil moisture - justification of P-band. 
-
-Give two plots - reflectivity vs. soil moisture,  penetration depth vs. soil moisture. 
-
-\bf end of my notes \rm 
-
-The Penetration depth depth within an absorbing homogeneous material, in which the flux  of the field decays to $\frac{1}{e}$ of its surface value \cite{Ulaby:1981}. 
-This can be shown to be dependent on the imaginary part of the soil dielectric constant and the wavelength. 
-%\begin{eqnarray}
-%	\alpha &&= \frac{2\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}}) \\
-%    \delta_p &&= \frac{\alpha}{2}
-%\end{eqnarray}
-
-\begin{equation}
-%	\alpha &&= \frac{2\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}}) \\
-  \delta_p  = \frac{\pi}{\lambda} Im(\sqrt{\varepsilon_{soil}})
-\end{equation}
-Where  $\alpha$ attenuation constant.
-
-The dielectric constant of soil depends on the soil moisture, with several models developed and in use for remote sensing [citations to Wang and Schmuggee, etc ...].
-These models are functions of soil texture, frequency, and salinity are known. 
-Figure \ref{fig:depth} plots the penetration depth as a function of volumetric soil moisture, computed using the model [XXX], for three fraquencies, represeting P-band (250 MHz), L-band(1.5 GHz) and S-band (2.2 GHz). 
-Although the situation in a realistic  natural environment will be more complicated, with a heterogeneous multi-layer soil, and variable soil moisture profile, this simple definition of penetration depth will be used as an approximation of the soil depth to which microwave remote sensing is capable of making a measurement.  Figure \ref{fig:depth} clearly shows that measurements below the top few cm. of soil will require observations in P-band and lower frequencies. 
-
-\begin{figure}[!t]
-	\centering
-	%\includegraphics[width=2.5in]{}
-	\caption{Penetration depth vs. volumetric soil moisture, for P-band, L-band and S-band.}
-    \centering
-	\label{fig:depth}
-\end{figure}
-
-Assuming a 45 deg. incidence angle and a 1.2~m wavelength,  P-band signals are expected to meet the Rayleigh criterion for specular reflection when soil height variation is smaller than 21 cm. The more stringent Fraunhofer condiiton [citation to Ulaby] will be met for soil roughness smaller than 5 cm.  These are reasonable conditions to meet for agricultural fields, and we will proceed with these assumptions. 
-Validation of this assumption will be a key step in the forthcoming experimental tests of the Signals of Opportunity Airborne Demonstrator (SoOp-AD). 
-
-
-%Figure \ref{fig:Fresnel zone} indicates the Fresnel zone with specular point. The Fresnel zone can be calculated by
-%\begin{equation}
-%	F_n=\sqrt{n \lambda \frac{D_{TS}D_{RS}}{D_{TS}+D_{RS}}} \label{Eq: Fresnel_zone}
-%\end{equation}
-%Where $n$ is nth Fresnel zone, $\lambda$ is the wavelength of signal, $D_{TS}$ is the distance between the transmitter and specular point, $D_{RS}$ is the distance between the receiver and specular point. Because $D_{TS}$ is extremely large than $D_{RS}$, the equation can be re-written as,
-
-The first Fresnel zone, assuming a distant transmitter, will be an ellipse with a semi-major axis  
-\begin{equation}
-	%F_n=\sqrt{n \lambda D_{RS}} \Rightarrow 
-    a =\sqrt{\frac{\lambda h}{sin\theta} } 
-     \label{Eq: Fresnel_zone_reduce}
-\end{equation}
-on the soil surface.
-$h$ is the height and $\theta$ is the elevation angle.
-The first fresnel zone will be used as the definition of the resolution of the specular reflectometry measurmenets. 
-
-%\begin{figure}[!t]
-%	\centering
-%	\includegraphics[width=2.5in]{pdf/Fresnel_zone.pdf}
-%	\caption{Fresnel zone for the specular point.}
-%    \centering
-%	\label{fig:Fresnel zone}
-%\end{figure}
-
-
-%\subsection{Fresnel reflection}
-%\section{Soil moisture retrieval from reflectivity}
-
-Reflectivity, $\Gamma$ can be used to directly sense the soil moisture through the   Fresnel  coefficients $\mathcal{R}$, derived for the specular reflection from the interface between two semi-infinite media.
+According to statement of energy conversation, the relationship between reflectivity $\Gamma$ and emissivity $T$ is expressed as $\Gamma + T = 1$. Reflectivity, $\Gamma$ can be used to directly sense the soil moisture through the   Fresnel  coefficients $\mathcal{R}$, derived for the specular reflection from the interface between two semi-infinite media.
 $\Gamma_{pq} = |\mathcal{R}_{pq}|^2$ 
-For an incident polarization $p$ and reflected polarization $q$. 
-Circular polarization is used for most satellite communication transmissions.  The Fresnel coeffecients for incident right (R) and left(L) hand circular polarization are derived from the common horizontal (H) and Vertical (V) polarization forms. 
+For an incident polarization $p$ and reflected polarization $q$. Circular polarization is used for most satellite communication transmissions.  The Fresnel coeffecients for incident right (R) and left(L) hand circular polarization are derived from the common horizontal (H) and Vertical (V) polarization forms. 
 
 \begin{equation}
 	\begin{bmatrix}
@@ -594,42 +520,158 @@ Circular polarization is used for most satellite communication transmissions.  T
      \label{Eq: reflectivity_di}
 \end{equation}
 
-Figure \ref{fig:reflectivity} shows the reflectivity (RL ?) as a function of volumentric soil moisture, for several common soil types, computed using the XXX model for complex dielectric constant.   This relationship will be the fundamental approach to sensing the soil moisture content within approximately the top layers of soil down to the penetration depth given in figure \ref{fig:depth}.
-In this paper, we will present the essential design of an instrument for this measurement, using reflections of P-band signals of opportunity (SoOp) to estimate the surface reflectivity $\Gamma$. 
-An approach to estimating the soil reflectivity through cross-correlating the reflected signal with the direct one will be developed in section XXX. 
-Inverse methods to estimate the water distribution throughout a soil column from these measurements are beyond the scope of the work in this paper.  
-
-\begin{figure}[!t]
-	\centering
-	%\includegraphics[width=2.5in]{}
-	\caption{Reflectivity from flat surface vs. volumetric soil moisture, P-band}
-    \centering
-	\label{fig:reflectivity}
-\end{figure}
-
-
+Where $\tilde{ \varepsilon }_r$ is the dielectric constant of soil, and  $\theta$ is the elevation angle. The dielectric constant of soil depends on the soil moisture, with several models developed and in use for remote sensing \cite{Wang:2009}. In this paper, we will present the essential design of an instrument for this measurement, using reflections of P-band signals of opportunity (SoOp) to estimate the surface reflectivity $\Gamma$. 
+An approach to estimating the soil reflectivity through cross-correlating the reflected signal with the direct one will be developed in section \ref{section:Algorithm}.  Inverse methods to estimate the water distribution throughout a soil column from these measurements are beyond the scope of the work in this paper.  Figure \ref{fig:reflectivity} shows the reflectivity for linear and circular polarization as a function of volumentric soil moisture, for several common soil types (sandy clay, loam, and silty clay loam), computed using the model for complex dielectric constant  \cite{Peplinski:1995} \cite{Peplinski_correct:1995}.   
 \begin{figure}[t!]
 	\centering
-	\includegraphics[width=4in]{pdf/gamma_vs_mv1.pdf}
-	\caption{The reflectivity vs. soil moisture ($\%$) for the circular polarization}
+	\includegraphics[width=4in]{pdf/gamma_vs_mv3.pdf}
+	\caption{The reflectivity vs. soil moisture VWC($\%$) for the circular polarization with different soil types, 260 MHz frequency, and 20 $^\circ C$ temperature}
 	\centering
-	\label{fig:reflect_mv}
+	\label{fig:reflectivity}
 \end{figure}
-% The coefficients of a polynomial $P(x)$ of degree $N$ is given by
-% \begin{equation}
-%	P(1)x^N+P(2)x^{N-1}+\cdots+P(N)x+P(N+1)
-%\end{equation} The coefficients of a polynomials in Figure \ref{fig:mv_reflect} are lists in Table \ref{Table:Polynomial_fitting}
+In figure \ref{fig:reflectivity}, the soil textures  of soil 1 to 3 are  (50,40), (40,20), and (10,35) for the percentile of sand and clay, and they are plotted in blue, yellow, and green, respectively. The solid line is cross-polarization, and the dash line is co-polarization.
+
+This relationship will be the fundamental approach to sensing the soil moisture content within approximately the top layers of soil down to the penetration depth given in figure \ref{fig:depth}. The Penetration depth depth within an absorbing homogeneous material, in which the flux  of the field decays to $\frac{1}{e}$ of its surface value \cite{Ulaby:1981}.  This can be shown to be dependent on the imaginary part of the soil dielectric constant and the wavelength $\lambda$.
+\begin{equation}
+  \delta_p  = \frac{\pi}{\lambda} Im(\sqrt{\tilde{\varepsilon}_{r}})
+\end{equation}
+Where  $\alpha$ attenuation constant. Figure \ref{fig:depth} plots the penetration depth as a function of volumetric soil moisture, computed using the model \cite{Peplinski:1995}, for three frequencies, representing P-band (260 MHz), L-band(1.57542 GHz) and S-band (2.342205 GHz). Although the situation in a realistic  natural environment will be more complicated, with a heterogeneous multi-layer soil, and variable soil moisture profile, this simple definition of penetration depth will be used as an approximation of the soil depth to which microwave remote sensing is capable of making a measurement.  Figure \ref{fig:depth} clearly shows that measurements below the top few cm. of soil will require observations in P-band and lower frequencies. 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=4in]{pdf/penetration_depth.pdf}
+	\caption{Penetration depth with different frequencies, 20 $^\circ C$ temperature, and soil texture (40, 20); blue, red, and yellow lines shows the penetration depth with 260 MHz, 1.57542 GHz, and 2.342205 GHz, respectively.}
+   \centering
+	\label{fig:depth}
+\end{figure}
+
+Assuming a 45 deg. incidence angle and a 1.2~m wavelength,  P-band signals are expected to meet the Rayleigh criterion for specular reflection when soil height variation is smaller than 21 cm. The more stringent Fraunhofer condiiton \cite{Ulaby:1981} will be met for soil roughness smaller than 5 cm.  These are reasonable conditions to meet for agricultural fields, and we will proceed with these assumptions.  Validation of this assumption will be a key step in the forthcoming experimental tests of the Signals of Opportunity Airborne Demonstrator (SoOp-AD). 
+The first Fresnel zone, assuming a distant transmitter, will be an ellipse with a semi-major axis  
+\begin{equation}
+	%F_n=\sqrt{n \lambda D_{RS}} \Rightarrow 
+    a =\sqrt{\frac{\lambda h}{sin\theta} } 
+     \label{Eq: Fresnel_zone_reduce}
+\end{equation}
+on the soil surface. $h$ is the height and $\theta$ is the elevation angle. The first fresnel zone will be used as the definition of the resolution of the specular reflectometry measurmenets. 
+
+The transmitted signal from a satellite ($x_{T}$) is modeled as
+\begin{equation}
+	x_T(t)=\sqrt{C_T}a(t)e^{j\omega_et},
+    \label{Eq:xT}
+\end{equation}
+where $a(t)$ is the baseband digital signal.  The received signals at the object with antenna along the direct and reflected path ray can be represented 
+\begin{eqnarray}
+	%\begin{split}
+  	x_D(t)&=\sqrt{C_D}a(t-\tau_D)e^{j\omega_e(t-\tau_D)}, \\
+    x_R(t)&=\sqrt{C_R}a(t-\tau_R)e^{j\omega_e(t-\tau_R)}, 
+   % \end{split}
+    \label{Eq:xD_xR}
+\end{eqnarray}
+where $C_D$ and $C_R$ are received powers of signals the direct and reflected path at the antennas.  
+$\tau_D$ and $\tau_R$ are the path delay along the direct and reflected path. The reflectivity $\Gamma$ is contained within the ratio of the direct and reflected powers
+\begin{equation}
+	\Gamma=\frac{C_{R}}{C_{D}}
+    \label{Eq:reflect}
+\end{equation}
+Although a straighforward principle, the implementation of an instrument to extract this information introduces some complications.  
+Specifically, the SoOp receiver must perform the following key functions to get to the reflectivity as defined in \ref{Eq:reflect}: 1.) isolate the signal $x_R(t)$ from $x_D(t)$, 2.) Remove the modulation $a(t)$ containing the data, and 3.) Remove effects of the antenna and receiver gains, and system noise.  
+The next section will define the instrument design, and explain these functions in principle.  
+The following section (\ref{sec:algorithm}) will develop the theory supporting this design and the algorithm to extract reflectivity. 
+Finally, section (\ref{sec:error}) presents a simulation and error analysis. 
 
 
+\section{Instrument Design}
 
-\section{Development of the Retrieval Algorithm}
+\label{sec:instrument}
+JLG: Do we want this here ? or after the theory section ? My view is give a general overview and then provide the numbers developed in the theory. 
+
+\subsection{Requirements}
+
+Host on B-200 or similar aircraft
+
+Observation of geostationary transmitters operating between XXX and XXX deg. Elevation, transmitting between 230 and 270 MHZ, with bandwidth of 5-25 KhZ, separated by XXX KHz. [give general overview here, but state the key assumptions about the transmitted source which drives the design process]  A detailed description of the signal source is provided in \ref{app:signal_source}
+
+Working requirement for end-to-end retrieval accuracy of 0.04 volumetric water content.
+
+Precision for altitude and attitude, which map through antenna gain. 
+
+Table \ref{tab:sysreq} summarizes the system requirements derived from the science requirements [ jlg do we want to break these down so that you can show the flow-down ? or just state the key driving requirements]
+
+Error analysis in \ref{sec:error} will show that these working requirements are expected to produce a system meeting the retrieval precision requirements. 
+
+\begin{table}
+\label{tab:sysreq}
+\caption{System Requirements}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameter &  Value & Units \\
+\hline
+VMC Retrieval Precision &  0.04 & $m^3/m^3$ \\
+\hline
+Altitude precision &  100 & m \\
+\hline
+Attitude precision & 0.1 & deg \\
+\hline 
+Antenna Gain Knowledge & 0.2 & dB \\
+\hline 
+\end{tabular}
+
+\end{table}
+
+A summary of the complete system is shown in figure \ref{fig:schematic}.  It consists of a pair of two dual-pol antennas elements, identified as ``A'' and ``B'', connected to two parallel and independent analog sections, identified as ``1'' and ``2''  through a transfer switch.  The transfer switch will enable calibration of the receiver gain variations.  An antenna beam forming technique (described in \ref{sec:antenna}) will combined signals A and B to form a sky-view (S) and Earth-view (E) beam.  
+The design requirement for this is to focus the S beam in the direction of the direct (D) line of sight signal with a null in the direction of the reflected (R) signal. 
+Similarly, the E beam will be formed to have a maximum gain in the R signal direction, with a null in the D signal direction.
+This beam-forming is not perfect, and quantifying the residual signal from R and D arriving in the S and E beams, respectively, will form an important part of the system error budget, developed in section \ref{sec:error}. 
+Additional capability for calibration is provided by a calibrated thermal noise source.
+A digital section will cross-correlate the the signals from receivers 1 and 2, at various fixed lags, to generate an array of complex cross-correlation values, which form the instrument or Level 0 data products.
+
+[zenki's part - somewhat redundant ]
+
+A schematic for the SoOp P-band receiver is shown in figure \ref{fig:Hardware}. 
+The essential elements of this receiver are sky-view (S) and Earth-view (E) antennas and two identical recievers (identified as 1 and 2). 
+Generally, both the Earth- and Sky-view antennas will have non-negligible gain in the directions of the direct (D) and reflected (R) signals. 
+Characterization of the antenna patterns will thus require four gain pattern measurements, one for each antenna, in each direction, denoted as $G_{E,D}$, 
+$G_{E,R}$ 
+The receivers down-convert, amplify and digitize the signal.  
+Although assumed identical in design, the two receivers have different gains, $G_1$ and $G_2$, and different noise figures, both of which must be calibrated using a process described in section \ref{sec:calibration}.  
+A transfer switch, which changes the connections between the antennas $\{ E, S \}$ and the receiver channels, $\{ 1, 2\}$ and noise sources are used for the calibration process. 
+After digitization, the receivers  perform cross-correlation between the channel 1 and channel 2 at discrete lags. 
+The resulting measurements of the complex cross-correlation are the Level~0 data products (raw, un-calibrated instrument readings). 
+
+Technical details of these sub-systems are described below. 
+
+\subsection{Antenna}
+\label{sec:antenna}
+
+Nelis - provide some text - not giving away too much of the second paper. 
+
+Focus on hardware here, present the theoretical beam patterns that will be generated.  
+
+Theory for the beam forming will be presented in another paper. 
+
+\subsection{Analog Section}
+\label{sec:analog}
+[Manuel or Joe]
+
+\subsection{Digital Section}
+\label{sec:digital}
+
+[Manuel or Joe ?]
+
+\section{Measurement Theory}
+ \label{section:Algorithm}
+ The theory supporting the instrument conceptual design in  section \ref{sec:instrument} is presented here. 
+ 
 \subsection{Signal Model}
 The transmitted signal from a satellite ($x_{T}$) is modeled as
 \begin{equation}
 	x_T(t)=\sqrt{C_T}a(t)e^{j\omega_et},
     \label{Eq:xT}
 \end{equation}
-where the transmitted carrier power is $C_{T}$, $a(t)$ is the modulation, $ω_{e}$ is the free space frequency. The received signals at the object with antenna along the direct and reflected path ray can be represented 
+where the transmitted carrier power is $C_{T}$,  and $\omega_{e}$ is the free space frequency. $a(t)$ is assumed as Quadrature Phase Shift Keying (QPSK) modulation in the following equation.
+\begin{equation}
+a(t)=\sum_{q=0}^{\infty}rect(\frac{t-(q+1/2)T_c}{T_c})e^{j(2p(q)+1)\frac{\pi}{4}}
+\end{equation}
+$T_c$  is the chipping time, and $p$ is an uniform distribution  on integers 0, 1, 2, 3, and rect denotes a rectangle function. The received signals at the object with antenna along the direct and reflected path ray can be represented 
 \begin{eqnarray}
 	%\begin{split}
   	x_D(t)&=\sqrt{C_D}a(t-\tau_D)e^{j\omega_e(t-\tau_D)}, \\
@@ -646,26 +688,13 @@ $\tau_D$ and $\tau_R$ are the path delay along the direct and reflected path. Th
 Where $C_{DS}$ and $C_{RS}$ are, respectively, the incident (direct) and reflected signal powers at the surface. 
 For an airbonre recevier, we will neglect the additional path loss from the aircraft to the surface, and approximate $C_{DS}\approx C_D$ and $C_{RS}\approx C_R$
  
-A schematic for the SoOp P-band receiver is shown in figure \ref{fig:Hardware}. 
-The essential elements of this receiver are sky-view (S) and Earth-view (E) antennas and two identical recievers (identified as 1 and 2). 
-Generally, both the Earth- and Sky-view antennas will have non-negligible gain in the directions of the direct (D) and reflected (R) signals. 
-Characterization of the antenna patterns will thus require four gain pattern measurements, one for each antenna, in each direction, denoted as $G_{E,D}$, 
-$G_{E,R}$ 
-The receivers down-convert, amplify and digitize the signal.  
-Although assumed identical in design, the two receivers have different gains, $G_1$ and $G_2$, and different noise figures, both of which must be calibrated using a process described in section \ref{sec:calibration}.  
-A transfer switch, which changes the connections between the antennas $\{ E, S \}$ and the receiver channels, $\{ 1, 2\}$ and noise sources are used for the calibration process. 
-After digitization, the receivers  perform cross-correlation between the channel 1 and channel 2 at discrete lags. 
-The resulting measurements of the complex cross-correlation are the Level~0 data products (raw, un-calibrated instrument readings). 
+
 
 \begin{figure}[t!]
 	\centering
     \centering
-	\includegraphics[width=2.5in]{pdf/ant_gain.jpg}
+	\includegraphics[width=5 in]{pdf/Picture1.jpg}
 	\caption{The gain of sky-view and earth-view antenna for the direct and reflected path rays..}
-	\centering
-	\includegraphics[width=2.5in]{pdf/hardware.pdf}
-	\caption{Schematic of a SoOp receiver.  Sky-view (S) and Earth-view (E) antennas \bf could you combine these two ? \rm}
-	\centering
 	\label{fig:Hardware}
 \end{figure}
 
@@ -674,11 +703,11 @@ At the  receiver receives the signals, the models of signal for channel 1 and 2 
 %  \begin{split}
  	x_1(t)&= \sqrt{G_1}
     \left[ 
-       \sqrt{G_{S,D} C_T} a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
+       \sqrt{G_{S,D} C_D} a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
        \sqrt{G_{S,R} C_R} a(t-\tau_{R}) e^{-\omega_{C} \tau_R} + n_1(t) 
       \right] e^{-j \omega_{IF} t} \\
     x_2(t)&=\sqrt{G_2}\left[ 
-         \sqrt{G_{E,D} C_T}  a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
+         \sqrt{G_{E,D} C_D}  a(t-\tau_{D}) e^{-\omega_{C} \tau_D} + 
          \sqrt{G_{E,R} C_R} a(t-\tau_{R}) e^{-\omega_{C} \tau_R} + n_2 (t) \right]
          e^{-j \omega_{IF} t}
 %  \end{split}
@@ -700,7 +729,7 @@ $\omega_{IF} = \omega_{LO} - \hat{\omega}_c$ is the intermediate frequency, foll
 \subsection{Correlation}
 The digital receiver can perform a short-time correlation between two signals ($x_p$ and $x_q$) at delay $\tau_s$, using an integration time $T_I$. 
 \begin{equation}
-	R_{pq}(\tau)  = %\langle x_p^*(t)x_q(t+\tau)\rangle
+	R_{pq}(\tau)  %=\langle x_p^*(t)x_q(t+\tau)\rangle
     =\frac{1}{T_I} \int_{T_I}x_p(t) x_q^*(t+\tau)dt 
    % R_{pq}(\tau-\tau_{qp}) =\langle x_p^*(t-\tau_p)x_q(t-\tau_q +\tau)\rangle
     \label{Eq: correlation_def}
@@ -822,7 +851,8 @@ The three noises, $\tilde{n}_1$, $\tilde{n}_2$, and $\tilde{n}_{12}$ are zero-me
 
 
 
-\subsection{Observable and Forward Model}
+\subsection{Definition of a Reflectivity Observable}
+ \label{sec: Observable and Forward Model}
 In order to derive the relationship between the numerical values of the three complex correlation functions $R_{11}$, $R_{22}$ and $R_{12}$, derived in the previous section, and the reflectivity, $\Gamma$, we will first consider an ideal case using  
 antennas has perfect isolation of the desired signal, such that
  $G_{S,R}\approx 0 $ and $G_{E,D}\approx 0$. 
@@ -830,7 +860,7 @@ Moreover, assume a perfect downconversion to baseband, so that the immediate fre
 A calibration process, described in XXX,  is used to obtain the antenna gains, $G_{S,D}$, $G_{S,R}$, $G_{E,R}$, $G_{E,D}$, the ratio of receiver gains, $(G_1/G_2)$ and the noise floors $\sigma_1$, $\sigma_2$. 
 Once these parameters, assumed to remain constant after calibration, are obtained, the following observable is formed. 
 \begin{eqnarray}
- \Gamma_{12} =	\sqrt{\frac{G_1}{G_2}}\sqrt{\frac{G_{S,D}}{G_{E,R}}} \frac{\tilde{R}_{12}(\tau^s_{RD})}{\tilde{R}_{12}(0)-G_1\sigma_1^2}  
+ \Gamma_{12} =	\sqrt{\frac{G_1}{G_2}}\sqrt{\frac{G_{S,D}}{G_{E,R}}} \frac{\tilde{R}_{12}(\tau^s_{RD})}{\tilde{R}_{11}(0)-G_1\sigma_1^2}  
     \label{Eq:Gamma_estimation_approx}
 \end{eqnarray}
 Substitution of (\ref{Eq:R11}), (\ref{Eq:R22}), and (\ref{Eq:R12}) into
@@ -851,7 +881,7 @@ Assuming a high signal to noise ratio, as would be expected for satellite commun
 if $|A|>> |n_A|$ and $|B| >> |n_B|$.
 Substituting (\ref{Eq:g1sd}) and (\ref{Eq:g2er}), with the high SNR assumption, reduces (\ref{Eq:Gamma_estimation_approx_subst1}) to 
 \begin{equation}
-    \Gamma_{12} = \Gamma e^{-j \omega_c \tau{RD}} + \tilde{n}_\Gamma
+    \Gamma_{12} = \sqrt{\Gamma} e^{-j \omega_c \tau{RD}} + \tilde{n}_\Gamma
 \end{equation}
 in which $\tilde{n}_\Gamma$ is a zero-mean random variable. 
 This shows one approach to estimating the reflectivity, $\Gamma$ is through forming the observable $\Gamma_{12}$ defined in (\ref{Eqn:Gamma_estimation_approx}) and then computing the magnitude.  
@@ -886,7 +916,7 @@ The isolation of sky-view and earth-view antenna are denoted as
    I_E& = \frac{G_{ED}}{G_{ER}}
 \end{eqnarray}
 
-\subsection{Reflectivity Retrieval}
+\subsection{Reflectivity Retrieval}  \label{sec: Reflectivity Retrieval}
 Equation (\ref{Eq: Gamma_estimation_approx1}), when plotted in the complex plane in figure XXX will shows the effect of the antenna isolation. 
 In this figure, curves for the complex function $f(\Gamma, phi)$ are a set of reflectivities, over the range $-\pi \leq \phi \leq \pi$.
 On the top is the example of perfect isolation presented earlier, in which each reflectivity corresponds to a circle centered on the origin. 
@@ -904,6 +934,7 @@ As with the ideal case, this eliminates the need for high-precision knowledge of
 
 \begin{table}[ht]
 \centering
+\caption{System design specifications}
 \begin{tabular}  {|c|c|c|c|}
 	\hline
      \textbf{Parameter} & \textbf{Symbol}	& \textbf{Value} &	\textbf{units}  \\
@@ -921,13 +952,10 @@ As with the ideal case, this eliminates the need for high-precision knowledge of
              Antenna Gain &	$G_{ED}$ & XXX  & 	dB	\\
     \hline
 \end{tabular}
-\caption{System design specifications}
 \label{tab:sysparam}
 \end{table}
 
-
-
-\subsection{Calibration}
+\section{Calibration}
 \label{sec:calibration}
 In the reflectivity estimation described above, there are six parameters which must calibrated for the system, antenna gains in the directions of direct and reflected ray paths ($G_{S,D}$, $G_{S,R}$, $G_{E,D}$, $G_{E,R}$, the channel gain ratio ($G_1/G_2$), and the two noise floors $\sigma_1$, $\sigma_2$. 
 Of these, we will assume that the four antenna gain values are properties of the antenna design and integration on the airframe and will remain constant. 
@@ -1016,7 +1044,69 @@ The antenna swapping \cite{Alejandro:2013} is used for the estimation of the rat
 
 \bf The following sections are outlines, with bullet points.  I have moved some of the UFO -system specific description into one of the sections, to describe the experimetnal work \rm
 
+
+
+
+
+\section{Measurement Simulation}
+   \begin{itemize}
+     \item description of the bit-level signal simulator
+   \end{itemize}
+   
+\section{Sensitivity Analysis and Error Budget}
+\label{sec:error}
+   \begin{itemize}
+     \item Error sources: antenna gain calibration uncertainty, aircraft motion, noise calibration uncertainty, etc.
+     \item Show sensitivity to error in each one of these and how it maps to error in the retrieval of reflectivity
+     \item special case of aircraft motion and integration time.
+     \item Summary table for each error source with an RSS of the error - this will be in the form of a budget - our requirements on each component of the system - to meet our working requirement.
+     \item End-to-end "ensemble" simulation, of a large number of cases distributed over a range of soil moistures, noise figures, etc ...
+   \end{itemize}
+   
+\subsection{Sensitivity Analysis}
+The performance of reflectivity retrieval highly depends on the offset of calibrated terms $(G_1, G_2, G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}, \sigma_1)$ in Equation \ref{Eq:Gamma_estimation}. Equation \ref{Eq:Gamma_estimation} is rewritten as
+\begin{equation}
+f(\Gamma, \phi, G_1, G_2, G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}, \sigma_1) =
+	\frac{(\sqrt{I_E}+\sqrt{I_S}\Gamma)R_a(\tau_{RD})+\sqrt{\Gamma} 
+    e^{j\phi}+\sqrt{I_S I_E\Gamma} R_a(2\tau_{RD})e^{-j\phi}} 
+    {1 + I_S \Gamma + 2 \sqrt{I_S \Gamma} \mathcal{Re}[ R_a(\tau_{RD})] \cos \phi}
+        \label{Eq:Gamma_uncertainty}
+\end{equation}
+
+To analyze the effect of the calibrated terms,  
+From Section \ref{sec: Observable and Forward Model},  includes  . . $\Gamma_{12}$ is an implicit function, and the relationship between $\Gamma$ and the calibrated terms is derived by
+
+\begin{eqnarray}
+d\Gamma_{12} = \frac{\partial \Gamma_{12}}{\partial G_1} dG_1 
+\end{eqnarray}
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.
+
+
+
+\appendices
+
 \section{P-band Signal Sources}
+\label{app:signal_source}
    \begin{itemize}
      \item General description of allocation of 230-270 MHz band for Govt use
      \item Published information about UFO - signal design, link budget, and orbits - be sure to cite the source of data
@@ -1048,51 +1138,134 @@ The antenna swapping \cite{Alejandro:2013} is used for the estimation of the rat
 \end{table}
 
 
-\section{Measurement Simulation}
-   \begin{itemize}
-     \item description of the bit-level signal simulator
-   \end{itemize}
-   
-\section{Sensitivity Analysis and Error Budget}
-   \begin{itemize}
-     \item Error sources: antenna gain calibration uncertainty, aircraft motion, noise calibration uncertainty, etc.
-     \item Show sensitivity to error in each one of these and how it maps to error in the retrieval of reflectivity
-     \item special case of aircraft motion and integration time.
-     \item Summary table for each error source with an RSS of the error - this will be in the form of a budget - our requirements on each component of the system - to meet our working requirement.
-     \item End-to-end "ensemble" simulation, of a large number of cases distributed over a range of soil moistures, noise figures, etc ...
-   \end{itemize}
-   
-   
-\section{Field Experiment}
-   \bf Joe ? Jeff ? \rm 
+\section{correlation of QPSK modulation}
+[JLG - not sure this is needed - isnt this just standard comm theory ? ]
 
-
-\section{Conclusion}
-The conclusion goes here.
-
-
-
-
-
-% if have a single appendix:
-%\appendix[Proof of the Zonklar Equations]
-% or
-%\appendix  % for no appendix heading
-% do not use \section anymore after \appendix, only \section*
-% is possibly needed
-
-% use appendices with more than one appendix
-% then use \section to start each appendix
-% you must declare a \section before using any
-% \subsection or using \label (\appendices by itself
-% starts a section numbered zero.)
-%
-
-
-\appendices
-\section{P-Band UHF-Follow On Satellites}
-
-Dont know if this needs to go here or in a later section - dont introduct it in the beginning - start with the fundamental problem and solution first, then go into the specific implementation later. 
+Autocorrelation of a discrete time signal $x[n]$ with finite samples $Nn_c$ is obtained directly by circular convolution or operating from the frequency domain in the following equations.
+\begin{equation}\label{Eq: Auto_corx}
+\begin{split}
+R_x[n] &= \sum\limits_{m=0}^{Nn_c-1} x^*[m] x[n+m \mod Nn_c] \\
+	 &= \frac{1}{Nn_c}\sum\limits_{k=0}^{Nn_c-1} X^*[k]X[k] e^{2\pi j \frac{kn}{Nn_c}},
+\end{split}
+\end{equation}
+where $X[k]$ is $x[n]$ in frequency domain by Discrete Fourier Transform (DFT), and the relationship between $x[n]$ and $X[k]$ is expressed in the following equations.
+\begin{equation}\label{Eq: xn_XK}
+\begin{split}
+X[k] &= \sum\limits_{m=0}^{Nn_c-1} x[n] e^{-2\pi j \frac{kn}{Nn_c}} \\
+x[n] &= \frac{1}{Nn_c} \sum\limits_{k=0}^{Nn_c-1} X[k] e^{2\pi j \frac{kn}{Nn_c}} 
+\end{split}
+\end{equation}
+Let $a[n]$ denote the discrete time QPSK signal with $Nn_c$ samples and be expressed in the form
+\begin{equation}\label{Eq: a_n}
+\begin{split}
+a[n] &= \sum\limits_{q=0}^{N-1} rect(\frac{nT_s-(q+1/2)T_c}{T_c})e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} \\ 
+	 &= \sum\limits_{q=0}^{N-1} rect(\frac{n-(q+1/2)n_c}{n_c})e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}},    
+     \end{split}
+\end{equation}
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=3 in]{pdf/a_n.jpg}
+	\caption{The discrete time rectangular function}
+	\label{fig:a_n}
+\end{figure}
+where $T_s$ is the sampling time, $T_c=1/bw$ is the time corresponding to bandwidth ($bw$), $n_c=T_c/T_s$ is the number samples within $T_c$, $N$ represents numbers of $n_c$ ,and $rect$ denotes a rectangular function as shown in Figure \ref{fig:a_n}. $\mathcal{U}_q$ is uniform distribution with integers 0, 1, 2, and 3. To elaborate the autocorrelation of $a[n]$, the autocorrelation of the single rectangular function $c[n]$ is derived first. 
+\begin{equation}\label{Eq: c_n}
+c[n] = rect(\frac{n-\frac{1}{2} n_c}{n_c})
+\end{equation}
+The autocorrelation of $c[n]$ is denoted by $d[n]$, and is derived by substituting Equation \ref{Eq: c_n} into Equation \ref{Eq: Auto_corx}
+\begin{equation}\label{Eq: d_n}
+\begin{split}
+d[n] &= \sum\limits_{m=0}^{Nn_c-1} c^*[m] c[n+m] \\
+	 &= \sum\limits_{m=0}^{Nn_c-1} rect(\frac{m-\frac{1}{2} n_c}{n_c}) rect(\frac{n+m-\frac{1}{2} n_c \mod Nn_c}{n_c}) \\
+     &= \sum\limits_{m=0}^{n_c-1} (n_c-n)\delta[n-m] + 
+        \sum\limits_{m=(N-1)n_c-1}^{Nn_c-1} (n-(N-1)n_c-2)\delta[n-m] 
+\end{split}
+\end{equation}
+Figure \ref{fig:c_n_d_n} illustrates $c[n]$ and $d[n]$. The autocorrelation of $c[n]$ in frequency domain is also obtained by Equation \ref{Eq: Auto_corx}.
+\begin{equation}\label{Eq: D_k}
+\begin{split}
+D[k] &= C^*[k] C[k] \\
+	 &= (\sum\limits_{n=0}^{Nn_c-1} rect(\frac{n-\frac{1}{2} n_c}{n_c}) e^{-2\pi j \frac{kn}{Nn_c}})^* 
+     (\sum\limits_{n=0}^{Nn_c-1} rect(\frac{n-\frac{1}{2} n_c}{n_c}) e^{-2\pi j \frac{kn}{Nn_c}} ) \\
+     &= (\frac{ sin(\frac{\pi k}{N})}{sin(\frac{\pi k}{N n_c}}))^2
+\end{split}
+\end{equation}
+\begin{figure}[t!]
+	\centering
+	\includegraphics[width=3 in]{pdf/rect_auto.jpg}
+	\caption{The discrete time rectangular function}
+	\label{fig:c_n_d_n}
+\end{figure}
+The autocorrelation of $a[n]$ denoted as $R_a[n]$ is derived in 
+\begin{equation}\label{Eq: Ra_n}
+R_a[n] = \frac{1}{Nn_c}\sum\limits_{k=0}^{Nn_c-1} A^*[k]A[k] e^{2\pi j \frac{kn}{Nn_c}}
+\end{equation}
+By DFT, $A[k]$ converted from $a[n]$ is given by
+\begin{equation}\label{Eq: DFT_a_n}
+A[k] = \sum\limits_{n=0}^{Nn_c} a[n]e^{-j2\pi \frac{kn}{Nn_c}}
+\end{equation}
+After substituting Equation \ref{Eq: a_n} into Equation \ref{Eq: DFT_a_n}, $A[k]$ is derived as
+\begin{equation}\label{Eq: A_k}
+\begin{split}
+A[k] &= \sum\limits_{n=0}^{Nn_c} \sum\limits_{q=0}^{N-1} rect(\frac{n-(q+1/2)n_c}{n_c}) e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} e^{-j2\pi \frac{kn}{Nn_c}} \\ 
+     &= \sum\limits_{q=0}^{N-1} \sum\limits_{n=0}^{Nn_c} rect(\frac{n-(q+1/2)n_c}{n_c}) e^{-j2\pi \frac{kn}{Nn_c}} e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} \\ 
+     &= \sum\limits_{q=0}^{N-1} \sum\limits_{n=qn_c}^{(q+1)n_c} e^{-j2\pi \frac{kn}{Nn_c}} e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} \\
+     &= \frac{1-e^{-j2\pi\frac{k}{N}}} {1-e^{-j2\pi\frac{k}{Nn_c}}} e^{-j2\pi \frac{qk}{N}} \sum\limits_{q=0}^{N-1} e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} \\
+     &= \frac{sin(\pi\frac{k}{N})} {sin(\pi\frac{k}{Nn_c)}} e^{-j\pi \frac{k(n_c-1)}{Nn_c}} \sum\limits_{q=0}^{N-1} e^{-j2\pi \frac{qk}{N}} e^{j(2\mathcal{U}_q+1)\frac{\pi}{4}} 
+\end{split}
+\end{equation} 
+$R_a[n]$ is further derived by substituting Equation \ref{Eq: A_k} into Equation \ref{Eq: Ra_n}.
+\begin{equation}\label{Eq: IDFT_Ra1}
+\begin{split}
+R_a[n] &= \frac{1}{Nn_c}\sum\limits_{k=0}^{Nn_c} D[k] 
+\sum\limits_{q=0}^{N-1} \sum\limits_{p=0}^{N-1} 
+e^{j(\mathcal{U}_q-\mathcal{U}_p)\frac{\pi}{2}} 
+e^{-j2\pi \frac{(q-p)k}{Nn_c}}
+e^{j2\pi \frac{kn}{Nn_c}} \\
+ &= \sum\limits_{q=0}^{N-1} \sum\limits_{p=0}^{N-1} 
+e^{j(\mathcal{U}_q-\mathcal{U}_p)\frac{\pi}{2}} 
+\frac{1}{Nn_c}\sum\limits_{k=0}^{Nn_c} D[k] e^{jc\pi \frac{(n-(q-p)n_c) k}{Nn_c}}
+\end{split}
+\end{equation}
+According to Equation \ref{Eq: xn_XK}, $d[n]$ is converted from $D[k]$ by IDFT. After replacing $n$ to $n-(q-p)$, 
+\begin{equation}\label{Eq: dn_tmp}
+d[n-(q-p)n_c] = \frac{1}{Nn_c} \sum\limits_{k=0}^{Nn_c} D[k] e^{jc\pi \frac{(n-(q-p)n_c) k}{Nn_c}} 
+\end{equation}
+In the end, the autocorrelation of $a_n$ is simplified as in
+\begin{equation}\label{Eq: IDFT_Ra2}
+R_a[n] = \sum\limits_{q=0}^{N-1} \sum\limits_{p=0}^{N-1} 
+e^{j(\mathcal{U}_q-\mathcal{U}_p)\frac{\pi}{2}} d[n-(q-p)n_c]
+\end{equation}
+When $q = p$, Equation \ref{Eq: IDFT_Ra2} becomes
+\begin{equation}\label{Eq: IDFT_Ra_q_eq_p}
+R_a[n] = N d[n]
+\end{equation}
+If $q \neq p$, The uniform difference distribution $\mathcal{D} = \mathcal{U}_q-\mathcal{U}_p$ of two uniform integers 0, 1, 2, and 3 is found as 
+\begin{equation}\label{Eq: diff_uni}
+P_{\mathcal{D}}[n] = \frac{4-|n|}{16}, n \in \{ -3,-2,-1,0,1,2,3 \} 
+\end{equation}
+Equation \ref{Eq: IDFT_Ra2} is rewritten as in
+\begin{equation}\label{Eq: IDFT_Ra3}
+R_a[n] = \sum\limits_{\substack{q=-(N-1) \\ q\neq 0}}^{N-1} e^{j(\mathcal{D}_q)\frac{\pi}{2}} d[n-q n_c]
+\end{equation}
+When $p \neq q $, the expected value of $R_a[n]$ is derived in the following equations
+\begin{equation}\label{Eq: E_Ra}
+\begin{split}
+E[R_a[n]] &= \sum\limits_{p=-3}^{p=3} \sum\limits_{\substack{q=-(N-1) \\ q\neq 0}}^{N-1}  e^{j p\frac{\pi}{2}} d[n-q n_c] P_{\mathcal{D}}[p] \\
+          &= \sum\limits_{\substack{q=-(N-1) \\ q\neq 0}}^{N-1} d[n-q n_c]  \sum\limits_{p=-3}^{p=3} e^{j p\frac{\pi}{2}}  P_{\mathcal{D}}[p] \\
+          &= \sum\limits_{\substack{q=-(N-1) \\ q\neq 0}}^{N-1} d[n-q n_c] [(j) \frac{1}{16} + (-1) \frac{1}{8} + (-j) \frac{3}{16} + (1) \frac{1}{4} + (j) \frac{1}{16} + (1) \frac{1}{16} + (-j) \frac{1}{16}] \\
+          &= 0
+\end{split}
+\end{equation}
+By combining Equations \ref{Eq: IDFT_Ra_q_eq_p} and \ref{Eq: E_Ra}, the expected value of $R_a[n]$ is
+\begin{equation}\label{Eq: E_Ra2}
+E[R_a[n]] = N d[n]
+\end{equation}
+After subtituing Equation \ref{Eq: d_n} into Equation \ref{Eq: E_Ra2}, the expected value of $R_a[n]$ becomes
+\begin{equation}\label{Eq: E_Ra3}
+E[R_a[n]] = \sum\limits_{m=0}^{n_c-1} N(n_c-n)\delta[n-m] + 
+            \sum\limits_{m=(N-1)n_c-1}^{Nn_c-1} N(n-(N-1)n_c-2)\delta[n-m] 
+\end{equation}
 
 
 
