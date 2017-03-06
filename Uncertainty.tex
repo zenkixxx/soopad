@@ -1,0 +1,55 @@
+\section{Uncertainty analysis}
+
+Parameters of uncertainty analysis inlude antenna gains ($G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}$), channel gain ($G_1, G_2$), noise power spectra ($\sigma_1$), reflectivity ($\Gamma$), and phase ($\phi$).  First, (\ref{eqn:observation_eqn_general}) without noise residual  term is expressed as
+\begin{equation}
+g(x, \tilde{x}) = \Gamma_{12}(x, \tilde{x}) - f(\tilde{x})
+\end{equation}
+Where $x=\{G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}, G_1, G_2, \sigma_1, \Gamma, \phi\}$ and $\tilde{x}=\{\tilde{G}_{S,D}, \tilde{G}_{S,R}, \tilde{G}_{E,D}, \tilde{G}_{E,R}, \tilde{G}_1, \tilde{G}_2, \tilde{\sigma}_1, \tilde{\Gamma}, \tilde{\phi}\}$ are the set of the parameters for the measurements and calibration terms. Once the claibration terms $\tilde{x}$ exactly matches $x$, $g(\Gamma, \phi, x, \tilde{x}) = 0$. The full expression of $g(\Gamma,\phi)$ is
+\begin{equation}
+g(x,\tilde{x}) = \sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}} \sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}  
+\frac{R_{1,2}(\tau^s_{RD})}{R_{1,1}(0)-\tilde{G}_1 \sigma^2_1} -
+ \frac
+{\sqrt{\tilde{I}_E}+ \sqrt{\tilde{I}_S} \tilde{\Gamma})R_a(\tau_{RD})+
+\sqrt{\tilde{\Gamma}}R_a(0)e^{j\tilde{\phi}}+
+\sqrt{\tilde{I}_E \tilde{I}_S\tilde{\Gamma}}R_a(2\tau_{RD})e^{-j \tilde{\phi} } )
+}
+{(1+\tilde{I}_S \tilde{\Gamma})R_a(0)+
+2 \sqrt{\tilde{I}_S\tilde{\Gamma}}(\mathcal{Re} (R_a(\tau_{RD})) )cos\tilde{\phi}
+}                            
+\end{equation}
+The total derivative of $g(x,\tilde{x})$ is
+\begin{align}
+dg(x,\tilde{x})&=\sum_{x_i \in \tilde{x}} \frac{\partial(g)}{\partial(x_i)} dx_i \\
+\Rightarrow dg(x,\tilde{x})&=\sum_{x_i \in \tilde{x}} (\frac{\partial(\Gamma_{12})}{\partial(x_i)} dx_i + \frac{\partial(f)}{\partial(x_i)}dx_i)
+\end{align}
+The first term is the total derivative of $\Gamma_{12}$, and the following equations shows the partial derivative of different parameters.
+\begin{equation}
+\tilde{G}_1 :
+\sqrt{\frac{\tilde{G}_2}{\tilde{G}_1}}
+\sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}
+\frac{R_{1,2}(\tau_{RD}) (R_{1,1}(0) + \tilde{G}_1 \sigma_1^2)}
+{2\tilde{G}_2(R_{1,1}(0) - \tilde{G}_1 \sigma_1^2)^2 )} 
+\end{equation}
+\begin{equation}
+\tilde{G}_2 :
+\sqrt{\frac{\tilde{G}_2}{\tilde{G}_1}}
+\sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}
+-\frac{R_{1,2}(\tau_{RD})}
+{2\tilde{G}_2^2(R_{1,1}(0) - \tilde{G}_1 \sigma_1^2) )} 
+\end{equation}
+\begin{equation}
+\tilde{G}_{S,D}:
+ \sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}}
+ \sqrt{\frac{\tilde{G}_{E,R}}{\tilde{G}_{S,D}}}  
+\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R} (R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)} 
+\end{equation}
+\begin{equation}
+\tilde{G}_{S,D}:
+ -\sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}}
+ \sqrt{\frac{\tilde{G}_{E,R}}{\tilde{G}_{S,D}}}  
+\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R}^2 (R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)} 
+\end{equation}\begin{equation}
+\tilde{\sigma}_1:
+\sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}} \sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}  
+\frac{2 \tilde{G}_1 \tilde{\sigma}_1 R_{1,2}(\tau^s_{RD})}{(R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)^2} 
+\end{equation}
