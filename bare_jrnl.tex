@@ -1471,6 +1471,7 @@ The proposed operations plan for a flight campaign using this instrument will in
 Knowledge of the specific modualtion design and data structure is not required to apply this method. 
 
 [Zenki]
+The performance of reflectivity retrieval highly depends on knowledge of antenna gain. The uncertainty of antenna gain is defined as $\frac{G'}{G}$; $G'$ is real antenna gain, and $G$ is the truth.  
 \label{sec:error}
    \begin{itemize}
      \item Error sources: antenna gain calibration uncertainty, aircraft motion, noise calibration uncertainty, etc.
@@ -1551,12 +1552,32 @@ The conclusion goes here.
 \section{P-band Signal Sources}
 [Zenki]
 \label{app:signal_source}
-   \begin{itemize}
-     \item General description of allocation of 230-270 MHz band for Govt use
-     \item Published information about UFO - signal design, link budget, and orbits - be sure to cite the source of data
-     \item Description of field experiment to verify the properties, including the ambiguity function, nominal values for signal power, persistence of signals, etc ... 
-     \item summary of properties of UFO, and reference to table \ref{tab:sysparam}
-\item Link budget
+   %\begin{itemize}
+     %\item General description of allocation of 230-270 MHz band for Govt use
+     %\item Published information about UFO - signal design, link budget, and orbits - be sure to cite the source of data
+     %\item Description of field experiment to verify the properties, including the ambiguity function, nominal values for signal power, persistence of signals, etc ... 
+     %\item summary of properties of UFO, and reference to table \ref{tab:sysparam}
+     %\item Link budget
+The Ultra High Frequency Follow-On (UFO) system is a communication satellite system whose function is to provide communications for airborne, ship, submarine and ground forces. UFO satellite system is a DOD sponsored program and operated by U.S. Navy. By now there are totally 11 satellites. The first launch is in Mar.1993 and the planned lifetime of UFO system is 14 years. It replaced FLTSATCOM and is scheduled to be replaced by MUOS. The orbit of UFO is geosynchronous orbit and the altitude is 32810 km. From F-1 to F-7, UFO satellites provide redundant command and ranging capabilities when the satellite is on station. The bandwidth of each satellite is 25 kHz and it is on board processing. According to the amateur radio website \cite{Matt:2014}, the frequencies from both satellites are as the following table. Table\ref{Table Band Plan} indicates the location for band plan for UFO satellites.
+
+\begin{table}[ht]
+\centering
+\caption{The location and band plan of UFO satellites}
+\begin{tabular}  {|c|c|c|c|c|}
+	\hline
+     \textbf{Band Plan} & \textbf{November}	& \textbf{Quebec} &	\textbf{Papa} & \textbf{Oscar} \\
+    \hline
+    Name & UFO F5 & UFO F6 & UFO F7 & UFO F2 \\
+    \hline
+     Location &	105.6° W & 99.2° W & 	22.0° W	&  28.7° E\\
+    \hline
+    Name & UFO F11 & UFO F10 & UFO F9  & UFO F3 \\
+    \hline
+    Location& 71.1° E &	72.6° E &	135.0° E &	156.4° W \\
+    \hline
+\end{tabular}
+\label{Table Band Plan}
+\end{table}
 
 To generate the synthetic signal, the EIRP of transmitted signal is analyzed by link budget analysis. The link budget is verified by a field experiment, and the equipment of field experiment includes two amateur Yagi antennas, preamplifier, and USRP software radio receiver. The system noise figure is calculated as a cascaded system in Figure \ref{fig:link_budget}.
 \begin{figure}[h]
@@ -1566,7 +1587,7 @@ To generate the synthetic signal, the EIRP of transmitted signal is analyzed by 
 	\centering
 	\label{fig:link_budget}
 \end{figure}
-Table \ref{table: link_budget} lists the items of link budget.
+Table \ref{table: link_budget} lists the items of link budget, and the theoretic SNR output is 5.9913 dB.
 \begin{table}[ht]
 \centering
 \caption{Link budget}
@@ -1588,42 +1609,20 @@ SNR output                       & 5.9913     & dB  \\ \hline
 \end{tabular}
 \label{table: link_budget}
 \end{table}
-The observable signal-to-noise ration (SNR) is calculated from the spectrum of the signals collected in the field experiment, and the power of spectrum at 260.35 MHz is set to the noise floor.
+The observable signal-to-noise ration (SNR) is calculated from the spectrum of the signals collected in the field experiment, and the power of spectrum at 260.35 MHz is set to the noise floor. The SNR of the collected signals is about 5 dB closed to the theoretic SNR output.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{pdf/SNR.jpg}
-	\caption{System noise figure includes antenna, cables, amplifier, and receiver.}
+	\caption{SNR of the signals collected in the field experiment, and the period is over 3 days.}
 	\centering
 	\label{fig:link_budget}
 \end{figure}
 
-\item ambigiuty function experimentlaly verified
-\item direction finding to validate ephemeris ???
-   \end{itemize}
+%\item ambigiuty function experimentlaly verified
+%\item direction finding to validate ephemeris ???
+  % \end{itemize}
    
-   \bf this is directly from Zenki's draft: \rm 
    
-   The Ultra High Frequency Follow-On (UFO) system is a communication satellite system whose function is to provide communications for airborne, ship, submarine and ground forces. UFO satellite system is a DOD sponsored program and operated by U.S. Navy. By now there are totally 11 satellites. The first launch is in Mar.1993 and the planned lifetime of UFO system is 14 years. It replaced FLTSATCOM and is scheduled to be replaced by MUOS. The orbit of UFO is geosynchronous orbit and the altitude is 32810 km. From F-1 to F-7, UFO satellites provide redundant command and ranging capabilities when the satellite is on station. The bandwidth of each satellite is 25 kHz and it is on board processing. According to the amateur radio website \cite{Matt:2014}, the frequencies from both satellites are as the following table. Table\ref{Table Band Plan} indicates the location for band plan for UFO satellites.
-
-\begin{table}[ht]
-\centering
-\begin{tabular}  {|c|c|c|c|c|}
-	\hline
-     \textbf{Band Plan} & \textbf{November}	& \textbf{Quebec} &	\textbf{Papa} & \textbf{Oscar} \\
-    \hline
-    Name & UFO F5 & UFO F6 & UFO F7 & UFO F2 \\
-    \hline
-     Location &	105.6° W & 99.2° W & 	22.0° W	&  28.7° E\\
-    \hline
-    Name & UFO F11 & UFO F10 & UFO F9  & UFO F3 \\
-    \hline
-    Location& 71.1° E &	72.6° E &	135.0° E &	156.4° W \\
-    \hline
-\end{tabular}
-\caption{The location and band plan of UFO satellites}
-\label{Table Band Plan}
-\end{table}
-
 \section{Correlation of modulation of signal} \label{App: Ra}
 The modulation of signal is Assumed to be QPSK
 \begin{equation}
