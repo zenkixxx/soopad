@@ -1,55 +1,152 @@
 \section{Uncertainty analysis}
 
-Parameters of uncertainty analysis inlude antenna gains ($G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}$), channel gain ($G_1, G_2$), noise power spectra ($\sigma_1$), reflectivity ($\Gamma$), and phase ($\phi$).  First, (\ref{eqn:observation_eqn_general}) without noise residual  term is expressed as
+Parameters of uncertainty analysis include antenna gains ($G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}$), channel gain ($G_1, G_2$), noise power spectra ($\sigma_1$), reflectivity ($\Gamma$), and phase ($\phi$).  First, (\ref{eqn:observation_eqn_general}) without noise residual  term is expressed as
 \begin{equation}
-g(x, \tilde{x}) = \Gamma_{12}(x, \tilde{x}) - f(\tilde{x})
+g(x) = \Gamma_{12}(x) - f(x)
 \end{equation}
-Where $x=\{G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}, G_1, G_2, \sigma_1, \Gamma, \phi\}$ and $\tilde{x}=\{\tilde{G}_{S,D}, \tilde{G}_{S,R}, \tilde{G}_{E,D}, \tilde{G}_{E,R}, \tilde{G}_1, \tilde{G}_2, \tilde{\sigma}_1, \tilde{\Gamma}, \tilde{\phi}\}$ are the set of the parameters for the measurements and calibration terms. Once the claibration terms $\tilde{x}$ exactly matches $x$, $g(\Gamma, \phi, x, \tilde{x}) = 0$. The full expression of $g(\Gamma,\phi)$ is
+Where $x=\{G_{S,D}, G_{S,R}, G_{E,D}, G_{E,R}, G_1, G_2, \sigma_1, \Gamma, \phi\}$. $Y_{11}(0)$  and $Y_{12}(\tau^s_{RD})$ are measurement. The full expression of $g(x)$ is
 \begin{equation}
-g(x,\tilde{x}) = \sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}} \sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}  
-\frac{R_{1,2}(\tau^s_{RD})}{R_{1,1}(0)-\tilde{G}_1 \sigma^2_1} -
+g(x) = \sqrt{\frac{G_1}{G_2}} \sqrt{\frac{G_{S,D}}{G_{E,R}}}  
+\frac{Y_{12}(\tau^s_{RD})}{Y_{11}(0)-G_1 \sigma^2_1} -
  \frac
-{\sqrt{\tilde{I}_E}+ \sqrt{\tilde{I}_S} \tilde{\Gamma})R_a(\tau_{RD})+
-\sqrt{\tilde{\Gamma}}R_a(0)e^{j\tilde{\phi}}+
-\sqrt{\tilde{I}_E \tilde{I}_S\tilde{\Gamma}}R_a(2\tau_{RD})e^{-j \tilde{\phi} } )
+{(\sqrt{I_E}+ \sqrt{I_S} \Gamma)R_a(\tau_{RD})+
+\sqrt{\Gamma}R_a(0)e^{j\phi}+
+\sqrt{I_E I_S\Gamma}R_a(2\tau_{RD})e^{-j \phi } )
 }
-{(1+\tilde{I}_S \tilde{\Gamma})R_a(0)+
-2 \sqrt{\tilde{I}_S\tilde{\Gamma}}(\mathcal{Re} (R_a(\tau_{RD})) )cos\tilde{\phi}
-}                            
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau_{RD})) )cos\phi
+} =0                 
+\label{Eq: uncertainty_g_gamma12_f}
 \end{equation}
 The total derivative of $g(x,\tilde{x})$ is
 \begin{align}
 dg(x,\tilde{x})&=\sum_{x_i \in \tilde{x}} \frac{\partial(g)}{\partial(x_i)} dx_i \\
-\Rightarrow dg(x,\tilde{x})&=\sum_{x_i \in \tilde{x}} (\frac{\partial(\Gamma_{12})}{\partial(x_i)} dx_i + \frac{\partial(f)}{\partial(x_i)}dx_i)
+\Rightarrow dg(x,\tilde{x})&=\sum_{x_i \in \tilde{x}} (\frac{\partial(\Gamma_{12})}{\partial(x_i)} dx_i - \frac{\partial(f)}{\partial(x_i)}dx_i)
+\label{Eq: uncertainty_dg}
 \end{align}
 The first term is the total derivative of $\Gamma_{12}$, and the following equations shows the partial derivative of different parameters.
-\begin{equation}
-\tilde{G}_1 :
-\sqrt{\frac{\tilde{G}_2}{\tilde{G}_1}}
-\sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}
-\frac{R_{1,2}(\tau_{RD}) (R_{1,1}(0) + \tilde{G}_1 \sigma_1^2)}
-{2\tilde{G}_2(R_{1,1}(0) - \tilde{G}_1 \sigma_1^2)^2 )} 
-\end{equation}
-\begin{equation}
-\tilde{G}_2 :
-\sqrt{\frac{\tilde{G}_2}{\tilde{G}_1}}
-\sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}
--\frac{R_{1,2}(\tau_{RD})}
-{2\tilde{G}_2^2(R_{1,1}(0) - \tilde{G}_1 \sigma_1^2) )} 
-\end{equation}
-\begin{equation}
-\tilde{G}_{S,D}:
- \sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}}
- \sqrt{\frac{\tilde{G}_{E,R}}{\tilde{G}_{S,D}}}  
-\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R} (R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)} 
-\end{equation}
-\begin{equation}
-\tilde{G}_{S,D}:
- -\sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}}
- \sqrt{\frac{\tilde{G}_{E,R}}{\tilde{G}_{S,D}}}  
-\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R}^2 (R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)} 
-\end{equation}\begin{equation}
-\tilde{\sigma}_1:
-\sqrt{\frac{\tilde{G}_1}{\tilde{G}_2}} \sqrt{\frac{\tilde{G}_{S,D}}{\tilde{G}_{E,R}}}  
-\frac{2 \tilde{G}_1 \tilde{\sigma}_1 R_{1,2}(\tau^s_{RD})}{(R_{1,1}(0)-\tilde{G}_1 \sigma^2_1)^2} 
-\end{equation}
+\begin{align}
+G_1 &:
+\sqrt{\frac{G_2}{G_1}}
+\sqrt{\frac{G_{S,D}}{G_{E,R}}}
+\frac{R_{1,2}(\tau_{RD}) (R_{1,1}(0) + G_1 \sigma_1^2)}
+{2G_2(R_{1,1}(0) - G_1 \sigma_1^2)^2 )} \\
+G_2 &:
+-\sqrt{\frac{G_2}{G_1}}
+\sqrt{\frac{G_{S,D}}{G_{E,R}}}
+\frac{R_{1,2}(\tau_{RD})}
+{2G_2^2(R_{1,1}(0) - G_1 \sigma_1^2) )} \\
+G_{S,D} &:
+ \sqrt{\frac{G_1}{G_2}}
+ \sqrt{\frac{G_{E,R}}{G_{S,D}}}  
+\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R} (R_{1,1}(0)-G_1 \sigma^2_1)} \\
+G_{E,R} &:
+ -\sqrt{\frac{G_1}{G_2}}
+ \sqrt{\frac{G_{E,R}}{G_{S,D}}}  
+\frac{R_{1,2}(\tau^s_{RD})}{2 G_{E,R}^2 (R_{1,1}(0)-G_1 \sigma^2_1)} \\
+\sigma_1 &:
+\sqrt{\frac{G_1}{G_2}} \sqrt{\frac{G_{S,D}}{G_{E,R}}}  
+\frac{2 G_1 \sigma_1 R_{1,2}(\tau^s_{RD})}{(R_{1,1}(0)-G_1 \sigma^2_1)^2} 
+\end{align}
+The second term is the total derivative of $f(\Gamma, \phi)$, and the partial derivative equations are expressed as follows,
+\begin{align}
+G_{S,D} :& -\frac{1}{2 G_{S,D}}
+\frac{\Gamma \sqrt{I_S} + \sqrt{\Gamma I_E I_S } R_a(2\tau^s _{RD}) e^{j  \phi}}
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi} +  \nonumber \\
+&\frac{1}{ G_{S,D}}\frac
+{(\sqrt{I_E}+ \sqrt{I_S} \Gamma)R_a(\tau^s_{RD})+
+\sqrt{\Gamma}R_a(0)e^{j\phi}+
+\sqrt{I_E I_S\Gamma}R_a(2\tau^s_{RD})e^{-j \phi } )
+(\Gamma I_S R_a(0) + \sqrt{\Gamma I_S} Re(R_a(\tau^s_{RD}) cos\phi)
+}
+{((1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi)^2
+}     \\ 
+G_{S,R} :& \frac{1}{2 G_{S,D} \sqrt{I_S}} 
+\frac{\Gamma R_a(\tau^s_{RD}) + \Gamma \sqrt{I_E} R_a(2\tau^s_{RD}) e^{-j \phi} }
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi} +  \nonumber \\
+&\frac{1}{G_{S,D} \sqrt{I_S}}\frac
+{(\sqrt{I_E}+ \sqrt{I_S} \Gamma)R_a(\tau^s_{RD})+
+\sqrt{\Gamma}R_a(0)e^{j\phi}+
+\sqrt{I_E I_S\Gamma}R_a(2\tau^s_{RD})e^{-j \phi } )
+(\Gamma \sqrt{I_S} R_a(0) + \sqrt{\Gamma} Re(R_a(\tau^s_{RD}) cos\phi)
+}
+{((1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi)^2
+}    \\
+G_{E,D} :& 
+\frac{1}{2 G_{E,R} \sqrt{I_E}}
+\frac{R_a(\tau^s_{RD}) + \sqrt{\Gamma I_S} R_a(2 \tau^s_{RD}) e^{-j \phi}}
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi
+}  \\
+G_{E,R} :& 
+-\frac{1}{2 G_{E,R}}
+\frac{ \sqrt{I_E} R_a(\tau^s_{RD}) + \sqrt{\Gamma I_S I_E} R_a(2 \tau^s_{RD}) e^{-j \phi}}
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi
+}  \\
+\Gamma :& \frac{1}{2 \sqrt{\Gamma}}
+\frac{2 \sqrt{\Gamma I_S }R_a(\tau^s_{RD}) + R_a(0) e^{j\phi} +\sqrt{ I_E I_S } R_a(2\tau^s _{RD}) e^{j  \phi}}
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi} -  \nonumber \\
+& \frac{1}{ \sqrt{\Gamma}}
+\frac
+{(\sqrt{I_E}+ \sqrt{I_S} \Gamma)R_a(\tau^s_{RD})+
+\sqrt{\Gamma}R_a(0)e^{j\phi}+
+\sqrt{I_E I_S\Gamma}R_a(2\tau^s_{RD})e^{-j \phi } )
+(\sqrt{\Gamma} I_S R_a(0) + \sqrt{ I_S} Re(R_a(\tau^s_{RD}) cos\phi)
+}
+{((1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi)^2
+}  \\
+\phi :& 
+-\frac{R_a(2\tau^s_{RD}) e^{-j\phi}\sqrt{\Gamma I_E I_S} j - \sqrt{\Gamma}R_a(0)e^{j\phi}j }
+{(1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi} + \nonumber \\
+& \frac{1}{ \sqrt{\Gamma}}
+\frac
+{(\sqrt{I_E}+ \sqrt{I_S} \Gamma)R_a(\tau^s_{RD})+
+\sqrt{\Gamma}R_a(0)e^{j\phi}+
+\sqrt{I_E I_S\Gamma}R_a(2\tau^s_{RD})e^{-j \phi } )
+(2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )sin\phi)
+}
+{((1+I_S \Gamma)R_a(0)+
+2 \sqrt{I_S\Gamma}(Re(R_a(\tau^s_{RD})) )cos\phi)^2
+} 
+\end{align}
+The uncertainty analysis is to clarify  the relationship between $\Gamma$ and $\tilde{x}$, and we can rewrite (\ref{Eq: uncertainty_dg}) by Taylor expansion.
+\begin{align}
+& \frac{\partial \Gamma_{12}}{\partial G_1} G_1 + 
+\frac{\partial \Gamma_{12}}{\partial G_2} G_2 +
+\frac{\partial \Gamma_{12}}{\partial \sigma_1} \sigma_1 + \nonumber \\
+&(\frac{\partial \Gamma_{12}}{\partial G_{S,D}} - \frac{\partial f}{\partial G_{S,D}} ) G_{S,D} + 
+(\frac{\partial \Gamma_{12}}{\partial G_{E,R}} - \frac{\partial f}{\partial G_{E,R}} ) G_{E,R} - \nonumber \\
+&\frac{\partial f}{\partial G_{E,D}} G_{E,D} - 
+\frac{\partial f}{\partial G_{S,R}} G_{S,R} -
+\frac{\partial f}{\partial \Gamma} \Gamma = 0
+\end{align}
+We can rearrange the equation as
+\begin{align}
+\Gamma= 
+&\frac{\partial \Gamma}{\partial f}(\frac{\partial \Gamma_{12}}{\partial G_1} G_1 + 
+\frac{\partial \Gamma_{12}}{\partial G_2} G_2 +
+\frac{\partial \Gamma_{12}}{\partial \sigma_1} \sigma_1 + \nonumber \\
+&(\frac{\partial \Gamma_{12}}{\partial G_{S,D}} - \frac{\partial f}{\partial G_{S,D}} ) G_{S,D} + 
+(\frac{\partial \Gamma_{12}}{\partial G_{E,R}} - \frac{\partial f}{\partial G_{E,R}} ) G_{E,R} - \nonumber \\
+&\frac{\partial f}{\partial G_{E,D}} G_{E,D} -
+\frac{\partial f}{\partial G_{S,R}} G_{S,R})
+\end{align}
+The standard deviation of $\Gamma$ is approximate to
+\begin{align}
+\sigma^2_\Gamma \approx 
+&(\frac{\partial \Gamma}{\partial f} \frac{\partial \Gamma_{12}}{\partial G_1})^2 \sigma^2_{G_1} + 
+(\frac{\partial \Gamma}{\partial f} \frac{\partial \Gamma_{12}}{\partial G_2})^2 \sigma^2_{G_2} +
+(\frac{\partial \Gamma}{\partial f} \frac{\partial \Gamma_{12}}{\partial \sigma_1})^2 \sigma_1 + \nonumber \\
+&(\frac{\partial \Gamma_{12}}{\partial G_{S,D}} - \frac{\partial f}{\partial G_{S,D}} ) G_{S,D} + 
+(\frac{\partial \Gamma_{12}}{\partial G_{E,R}} - \frac{\partial f}{\partial G_{E,R}} ) G_{E,R} - \nonumber \\
+&\frac{\partial f}{\partial G_{E,D}} G_{E,D} -
+\frac{\partial f}{\partial G_{S,R}} G_{S,R})
+\end{align}
