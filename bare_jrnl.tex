@@ -1620,11 +1620,11 @@ The observable signal-to-noise ration (SNR) is calculated from the spectrum of t
 	\label{fig:link_budget}
 \end{figure}
 
-The amibguity function is calculated by correlating two signals along direct path rays.
+Figure \ref{fig:ACF} shows the ambiguity function calculated by correlating two signals along direct path rays, the blue line indicates the ideal scenario, the red line is the ideal triangular function with digital filter, and the errorbar plot shows the mean and standard deviation of measurement in the field experiment. In the ideal scenario, the normalized ambiguity function is a triangular function, and the width is equal to $2/bw$. After applying the digital filter to reduce the noise effect, the shape of the triangular function is changed. The difference between data field experiment and the ideal scenario results from the amateur antenna and interference in the field.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=\textwidth]{pdf/ACF.jpg}
-	\caption{Normalized ambiguity function of ideal case and real signal; the blue line is the ideal scenario with 25-kHz bandwidth, the red line shows the ideal scenario with digital filter, green dots are the correlation with 1-sec integration time over 1 hour, and black line is the average over 1 hour.}
+	\caption{Normalized ambiguity function of ideal case and real signal; the blue line is the ideal scenario with 25-kHz bandwidth, the red line shows the ideal scenario with digital filter, the eorrbar plot shows the mean and bound level of one standard deviation.}
 	\centering
 	\label{fig:ACF}
 \end{figure}
